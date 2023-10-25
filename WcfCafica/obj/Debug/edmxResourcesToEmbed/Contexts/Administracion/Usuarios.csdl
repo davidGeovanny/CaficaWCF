@@ -1,0 +1,708 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UsuariosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="UsuariosContext" annotation:LazyLoadingEnabled="false">
+    <EntitySet Name="AccionesVistas" EntityType="UsuariosModel.AccionesVistas" />
+    <EntitySet Name="BDEmpresas" EntityType="UsuariosModel.BDEmpresas" />
+    <EntitySet Name="BDEmpresasRoles" EntityType="UsuariosModel.BDEmpresasRoles" />
+    <EntitySet Name="GruposVistas" EntityType="UsuariosModel.GruposVistas" />
+    <EntitySet Name="Modulos" EntityType="UsuariosModel.Modulos" />
+    <EntitySet Name="Roles" EntityType="UsuariosModel.Roles" />
+    <EntitySet Name="RolesAcciones" EntityType="UsuariosModel.RolesAcciones" />
+    <EntitySet Name="Sistemas" EntityType="UsuariosModel.Sistemas" />
+    <EntitySet Name="SistemasRoles" EntityType="UsuariosModel.SistemasRoles" />
+    <EntitySet Name="t1" EntityType="UsuariosModel.t1" />
+    <EntitySet Name="t2" EntityType="UsuariosModel.t2" />
+    <EntitySet Name="t3" EntityType="UsuariosModel.t3" />
+    <EntitySet Name="Tablas" EntityType="UsuariosModel.Tablas" />
+    <EntitySet Name="Tokens" EntityType="UsuariosModel.Tokens" />
+    <EntitySet Name="Usuarios" EntityType="UsuariosModel.Usuarios" />
+    <EntitySet Name="UsuariosRoles" EntityType="UsuariosModel.UsuariosRoles" />
+    <EntitySet Name="Versiones" EntityType="UsuariosModel.Versiones" />
+    <EntitySet Name="Vistas" EntityType="UsuariosModel.Vistas" />
+    <EntitySet Name="VistasFiltrosReportes" EntityType="UsuariosModel.VistasFiltrosReportes" />
+    <EntitySet Name="VistasGruposVistas" EntityType="UsuariosModel.VistasGruposVistas" />
+    <EntitySet Name="VistasTablas" EntityType="UsuariosModel.VistasTablas" />
+    <AssociationSet Name="fk_AccionesVistas_Vistas1" Association="UsuariosModel.fk_AccionesVistas_Vistas1">
+      <End Role="Vistas" EntitySet="Vistas" />
+      <End Role="AccionesVistas" EntitySet="AccionesVistas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RolesAcciones_AccionesVistas1" Association="UsuariosModel.fk_RolesAcciones_AccionesVistas1">
+      <End Role="AccionesVistas" EntitySet="AccionesVistas" />
+      <End Role="RolesAcciones" EntitySet="RolesAcciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_BDEmpresasRoles_BDEmpresas1" Association="UsuariosModel.fk_BDEmpresasRoles_BDEmpresas1">
+      <End Role="BDEmpresas" EntitySet="BDEmpresas" />
+      <End Role="BDEmpresasRoles" EntitySet="BDEmpresasRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_BDEmpresasRoles_Roles1" Association="UsuariosModel.fk_BDEmpresasRoles_Roles1">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="BDEmpresasRoles" EntitySet="BDEmpresasRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GruposVistas_Modulos1" Association="UsuariosModel.fk_GruposVistas_Modulos1">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="GruposVistas" EntitySet="GruposVistas" />
+    </AssociationSet>
+    <AssociationSet Name="GruposVistas_ibfk_1" Association="UsuariosModel.GruposVistas_ibfk_1">
+      <End Role="Sistemas" EntitySet="Sistemas" />
+      <End Role="GruposVistas" EntitySet="GruposVistas" />
+    </AssociationSet>
+    <AssociationSet Name="VistasGruposVistas_ibfk_1" Association="UsuariosModel.VistasGruposVistas_ibfk_1">
+      <End Role="GruposVistas" EntitySet="GruposVistas" />
+      <End Role="VistasGruposVistas" EntitySet="VistasGruposVistas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Modulos_Sistemas1" Association="UsuariosModel.fk_Modulos_Sistemas1">
+      <End Role="Sistemas" EntitySet="Sistemas" />
+      <End Role="Modulos" EntitySet="Modulos" />
+    </AssociationSet>
+    <AssociationSet Name="VistasGruposVistas_ibfk_3" Association="UsuariosModel.VistasGruposVistas_ibfk_3">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="VistasGruposVistas" EntitySet="VistasGruposVistas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_RolesAcciones_Roles1" Association="UsuariosModel.fk_RolesAcciones_Roles1">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="RolesAcciones" EntitySet="RolesAcciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SistemasRoles_Roles1" Association="UsuariosModel.fk_SistemasRoles_Roles1">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="SistemasRoles" EntitySet="SistemasRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UsuariosRoles_Roles1" Association="UsuariosModel.fk_UsuariosRoles_Roles1">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="UsuariosRoles" EntitySet="UsuariosRoles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SistemasRoles_Sistemas1" Association="UsuariosModel.fk_SistemasRoles_Sistemas1">
+      <End Role="Sistemas" EntitySet="Sistemas" />
+      <End Role="SistemasRoles" EntitySet="SistemasRoles" />
+    </AssociationSet>
+    <AssociationSet Name="VistasGruposVistas_ibfk_4" Association="UsuariosModel.VistasGruposVistas_ibfk_4">
+      <End Role="Sistemas" EntitySet="Sistemas" />
+      <End Role="VistasGruposVistas" EntitySet="VistasGruposVistas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_t3_t11" Association="UsuariosModel.fk_t3_t11">
+      <End Role="t1" EntitySet="t1" />
+      <End Role="t3" EntitySet="t3" />
+    </AssociationSet>
+    <AssociationSet Name="fk_t3_t21" Association="UsuariosModel.fk_t3_t21">
+      <End Role="t2" EntitySet="t2" />
+      <End Role="t3" EntitySet="t3" />
+    </AssociationSet>
+    <AssociationSet Name="VistasTablas_ibfk_2" Association="UsuariosModel.VistasTablas_ibfk_2">
+      <End Role="Tablas" EntitySet="Tablas" />
+      <End Role="VistasTablas" EntitySet="VistasTablas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tokens_Versiones1" Association="UsuariosModel.fk_Tokens_Versiones1">
+      <End Role="Versiones" EntitySet="Versiones" />
+      <End Role="Tokens" EntitySet="Tokens" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UsuariosRoles_Usuarios1" Association="UsuariosModel.fk_UsuariosRoles_Usuarios1">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="UsuariosRoles" EntitySet="UsuariosRoles" />
+    </AssociationSet>
+    <AssociationSet Name="VistasGruposVistas_ibfk_2" Association="UsuariosModel.VistasGruposVistas_ibfk_2">
+      <End Role="Vistas" EntitySet="Vistas" />
+      <End Role="VistasGruposVistas" EntitySet="VistasGruposVistas" />
+    </AssociationSet>
+    <AssociationSet Name="VistasTablas_ibfk_1" Association="UsuariosModel.VistasTablas_ibfk_1">
+      <End Role="Vistas" EntitySet="Vistas" />
+      <End Role="VistasTablas" EntitySet="VistasTablas" />
+    </AssociationSet>
+    <AssociationSet Name="VistasTablas_ibfk_10" Association="UsuariosModel.VistasTablas_ibfk_10">
+      <End Role="Vistas" EntitySet="Vistas" />
+      <End Role="VistasFiltrosReportes" EntitySet="VistasFiltrosReportes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AccionesVistas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="VistaId" Type="Int64" Nullable="false" />
+    <Property Name="Tipo" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="Vistas" Relationship="UsuariosModel.fk_AccionesVistas_Vistas1" FromRole="AccionesVistas" ToRole="Vistas" />
+    <NavigationProperty Name="RolesAcciones" Relationship="UsuariosModel.fk_RolesAcciones_AccionesVistas1" FromRole="AccionesVistas" ToRole="RolesAcciones" />
+  </EntityType>
+  <EntityType Name="BDEmpresas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RazonSocial" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RFC" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="SalidasSinExistencia" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="MetodoCosteo" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="ContrasenaReportes" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ValidaVariacionCosto" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="PorcentajeVariacionCosto" Type="Double" />
+    <Property Name="InicioPeriodo" Type="DateTime" />
+    <Property Name="FinPeriodo" Type="DateTime" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="BDEmpresasRoles" Relationship="UsuariosModel.fk_BDEmpresasRoles_BDEmpresas1" FromRole="BDEmpresas" ToRole="BDEmpresasRoles" />
+  </EntityType>
+  <EntityType Name="BDEmpresasRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RolId" Type="Int64" Nullable="false" />
+    <Property Name="BDEmpresaId" Type="Int64" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="BDEmpresas" Relationship="UsuariosModel.fk_BDEmpresasRoles_BDEmpresas1" FromRole="BDEmpresasRoles" ToRole="BDEmpresas" />
+    <NavigationProperty Name="Roles" Relationship="UsuariosModel.fk_BDEmpresasRoles_Roles1" FromRole="BDEmpresasRoles" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="GruposVistas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="ModuloId" Type="Int64" Nullable="false" />
+    <Property Name="SistemaId" Type="Int64" Nullable="false" />
+    <Property Name="Orden" Type="SByte" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="Modulos" Relationship="UsuariosModel.fk_GruposVistas_Modulos1" FromRole="GruposVistas" ToRole="Modulos" />
+    <NavigationProperty Name="Sistemas" Relationship="UsuariosModel.GruposVistas_ibfk_1" FromRole="GruposVistas" ToRole="Sistemas" />
+    <NavigationProperty Name="VistasGruposVistas" Relationship="UsuariosModel.VistasGruposVistas_ibfk_1" FromRole="GruposVistas" ToRole="VistasGruposVistas" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="SistemaId" Type="Int64" Nullable="false" />
+    <Property Name="Orden" Type="SByte" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="GruposVistas" Relationship="UsuariosModel.fk_GruposVistas_Modulos1" FromRole="Modulos" ToRole="GruposVistas" />
+    <NavigationProperty Name="Sistemas" Relationship="UsuariosModel.fk_Modulos_Sistemas1" FromRole="Modulos" ToRole="Sistemas" />
+    <NavigationProperty Name="VistasGruposVistas" Relationship="UsuariosModel.VistasGruposVistas_ibfk_3" FromRole="Modulos" ToRole="VistasGruposVistas" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Administrador" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="BDEmpresasRoles" Relationship="UsuariosModel.fk_BDEmpresasRoles_Roles1" FromRole="Roles" ToRole="BDEmpresasRoles" />
+    <NavigationProperty Name="RolesAcciones" Relationship="UsuariosModel.fk_RolesAcciones_Roles1" FromRole="Roles" ToRole="RolesAcciones" />
+    <NavigationProperty Name="SistemasRoles" Relationship="UsuariosModel.fk_SistemasRoles_Roles1" FromRole="Roles" ToRole="SistemasRoles" />
+    <NavigationProperty Name="UsuariosRoles" Relationship="UsuariosModel.fk_UsuariosRoles_Roles1" FromRole="Roles" ToRole="UsuariosRoles" />
+  </EntityType>
+  <EntityType Name="RolesAcciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RolId" Type="Int64" Nullable="false" />
+    <Property Name="AccionId" Type="Int64" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="AccionesVistas" Relationship="UsuariosModel.fk_RolesAcciones_AccionesVistas1" FromRole="RolesAcciones" ToRole="AccionesVistas" />
+    <NavigationProperty Name="Roles" Relationship="UsuariosModel.fk_RolesAcciones_Roles1" FromRole="RolesAcciones" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Sistemas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="GruposVistas" Relationship="UsuariosModel.GruposVistas_ibfk_1" FromRole="Sistemas" ToRole="GruposVistas" />
+    <NavigationProperty Name="Modulos" Relationship="UsuariosModel.fk_Modulos_Sistemas1" FromRole="Sistemas" ToRole="Modulos" />
+    <NavigationProperty Name="SistemasRoles" Relationship="UsuariosModel.fk_SistemasRoles_Sistemas1" FromRole="Sistemas" ToRole="SistemasRoles" />
+    <NavigationProperty Name="VistasGruposVistas" Relationship="UsuariosModel.VistasGruposVistas_ibfk_4" FromRole="Sistemas" ToRole="VistasGruposVistas" />
+  </EntityType>
+  <EntityType Name="SistemasRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RolId" Type="Int64" Nullable="false" />
+    <Property Name="SistemaId" Type="Int64" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="Roles" Relationship="UsuariosModel.fk_SistemasRoles_Roles1" FromRole="SistemasRoles" ToRole="Roles" />
+    <NavigationProperty Name="Sistemas" Relationship="UsuariosModel.fk_SistemasRoles_Sistemas1" FromRole="SistemasRoles" ToRole="Sistemas" />
+  </EntityType>
+  <EntityType Name="t1">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="t1col" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="t3" Relationship="UsuariosModel.fk_t3_t11" FromRole="t1" ToRole="t3" />
+  </EntityType>
+  <EntityType Name="t2">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="t3" Relationship="UsuariosModel.fk_t3_t21" FromRole="t2" ToRole="t3" />
+  </EntityType>
+  <EntityType Name="t3">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="t1id" Type="Int64" />
+    <Property Name="t2id" Type="Int64" />
+    <NavigationProperty Name="t1" Relationship="UsuariosModel.fk_t3_t11" FromRole="t3" ToRole="t1" />
+    <NavigationProperty Name="t2" Relationship="UsuariosModel.fk_t3_t21" FromRole="t3" ToRole="t2" />
+  </EntityType>
+  <EntityType Name="Tablas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="EsMaestra" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="VistasTablas" Relationship="UsuariosModel.VistasTablas_ibfk_2" FromRole="Tablas" ToRole="VistasTablas" />
+  </EntityType>
+  <EntityType Name="Tokens">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Token" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="VersionId" Type="Int64" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="Versiones" Relationship="UsuariosModel.fk_Tokens_Versiones1" FromRole="Tokens" ToRole="Versiones" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreCompleto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="ClaveApp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="UsuariosRoles" Relationship="UsuariosModel.fk_UsuariosRoles_Usuarios1" FromRole="Usuarios" ToRole="UsuariosRoles" />
+  </EntityType>
+  <EntityType Name="UsuariosRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UsuarioId" Type="Int64" Nullable="false" />
+    <Property Name="RolId" Type="Int64" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="Roles" Relationship="UsuariosModel.fk_UsuariosRoles_Roles1" FromRole="UsuariosRoles" ToRole="Roles" />
+    <NavigationProperty Name="Usuarios" Relationship="UsuariosModel.fk_UsuariosRoles_Usuarios1" FromRole="UsuariosRoles" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Versiones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Version" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="Tokens" Relationship="UsuariosModel.fk_Tokens_Versiones1" FromRole="Versiones" ToRole="Tokens" />
+  </EntityType>
+  <EntityType Name="Vistas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Parametros" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ImagenMenu" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Orden" Type="Byte" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <Property Name="Tipo" Type="String" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AccionesVistas" Relationship="UsuariosModel.fk_AccionesVistas_Vistas1" FromRole="Vistas" ToRole="AccionesVistas" />
+    <NavigationProperty Name="VistasGruposVistas" Relationship="UsuariosModel.VistasGruposVistas_ibfk_2" FromRole="Vistas" ToRole="VistasGruposVistas" />
+    <NavigationProperty Name="VistasTablas" Relationship="UsuariosModel.VistasTablas_ibfk_1" FromRole="Vistas" ToRole="VistasTablas" />
+    <NavigationProperty Name="VistasFiltrosReportes" Relationship="UsuariosModel.VistasTablas_ibfk_10" FromRole="Vistas" ToRole="VistasFiltrosReportes" />
+  </EntityType>
+  <EntityType Name="VistasFiltrosReportes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VistaId" Type="Int64" Nullable="false" />
+    <Property Name="Etiqueta" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Tipo" Type="String" Nullable="false" MaxLength="65532" FixedLength="false" Unicode="false" />
+    <Property Name="Lista" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="MetodoLista" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Columnas" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NombreParametro" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="DependeDeEtiqueta" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CampoValue" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="CampoDisplay" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="Orden" Type="Int32" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="Vistas" Relationship="UsuariosModel.VistasTablas_ibfk_10" FromRole="VistasFiltrosReportes" ToRole="Vistas" />
+  </EntityType>
+  <EntityType Name="VistasGruposVistas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VistaId" Type="Int64" Nullable="false" />
+    <Property Name="GrupoVistaId" Type="Int64" Nullable="false" />
+    <Property Name="ModuloId" Type="Int64" />
+    <Property Name="SistemaId" Type="Int64" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="GruposVistas" Relationship="UsuariosModel.VistasGruposVistas_ibfk_1" FromRole="VistasGruposVistas" ToRole="GruposVistas" />
+    <NavigationProperty Name="Modulos" Relationship="UsuariosModel.VistasGruposVistas_ibfk_3" FromRole="VistasGruposVistas" ToRole="Modulos" />
+    <NavigationProperty Name="Sistemas" Relationship="UsuariosModel.VistasGruposVistas_ibfk_4" FromRole="VistasGruposVistas" ToRole="Sistemas" />
+    <NavigationProperty Name="Vistas" Relationship="UsuariosModel.VistasGruposVistas_ibfk_2" FromRole="VistasGruposVistas" ToRole="Vistas" />
+  </EntityType>
+  <EntityType Name="VistasTablas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VistaId" Type="Int64" Nullable="false" />
+    <Property Name="TablaId" Type="Int64" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" />
+    <Property Name="UsuarioModifico" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="FechaUltimaModificacion" Type="DateTime" />
+    <NavigationProperty Name="Tablas" Relationship="UsuariosModel.VistasTablas_ibfk_2" FromRole="VistasTablas" ToRole="Tablas" />
+    <NavigationProperty Name="Vistas" Relationship="UsuariosModel.VistasTablas_ibfk_1" FromRole="VistasTablas" ToRole="Vistas" />
+  </EntityType>
+  <Association Name="fk_AccionesVistas_Vistas1">
+    <End Type="UsuariosModel.Vistas" Role="Vistas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.AccionesVistas" Role="AccionesVistas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vistas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AccionesVistas">
+        <PropertyRef Name="VistaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RolesAcciones_AccionesVistas1">
+    <End Type="UsuariosModel.AccionesVistas" Role="AccionesVistas" Multiplicity="1" />
+    <End Type="UsuariosModel.RolesAcciones" Role="RolesAcciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AccionesVistas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolesAcciones">
+        <PropertyRef Name="AccionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_BDEmpresasRoles_BDEmpresas1">
+    <End Type="UsuariosModel.BDEmpresas" Role="BDEmpresas" Multiplicity="1" />
+    <End Type="UsuariosModel.BDEmpresasRoles" Role="BDEmpresasRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BDEmpresas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BDEmpresasRoles">
+        <PropertyRef Name="BDEmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_BDEmpresasRoles_Roles1">
+    <End Type="UsuariosModel.Roles" Role="Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.BDEmpresasRoles" Role="BDEmpresasRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BDEmpresasRoles">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GruposVistas_Modulos1">
+    <End Type="UsuariosModel.Modulos" Role="Modulos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.GruposVistas" Role="GruposVistas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GruposVistas">
+        <PropertyRef Name="ModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GruposVistas_ibfk_1">
+    <End Type="UsuariosModel.Sistemas" Role="Sistemas" Multiplicity="1" />
+    <End Type="UsuariosModel.GruposVistas" Role="GruposVistas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sistemas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GruposVistas">
+        <PropertyRef Name="SistemaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VistasGruposVistas_ibfk_1">
+    <End Type="UsuariosModel.GruposVistas" Role="GruposVistas" Multiplicity="1" />
+    <End Type="UsuariosModel.VistasGruposVistas" Role="VistasGruposVistas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposVistas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VistasGruposVistas">
+        <PropertyRef Name="GrupoVistaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Modulos_Sistemas1">
+    <End Type="UsuariosModel.Sistemas" Role="Sistemas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.Modulos" Role="Modulos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sistemas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Modulos">
+        <PropertyRef Name="SistemaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VistasGruposVistas_ibfk_3">
+    <End Type="UsuariosModel.Modulos" Role="Modulos" Multiplicity="0..1" />
+    <End Type="UsuariosModel.VistasGruposVistas" Role="VistasGruposVistas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VistasGruposVistas">
+        <PropertyRef Name="ModuloId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_RolesAcciones_Roles1">
+    <End Type="UsuariosModel.Roles" Role="Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.RolesAcciones" Role="RolesAcciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="RolesAcciones">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SistemasRoles_Roles1">
+    <End Type="UsuariosModel.Roles" Role="Roles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.SistemasRoles" Role="SistemasRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SistemasRoles">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UsuariosRoles_Roles1">
+    <End Type="UsuariosModel.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="UsuariosModel.UsuariosRoles" Role="UsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuariosRoles">
+        <PropertyRef Name="RolId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SistemasRoles_Sistemas1">
+    <End Type="UsuariosModel.Sistemas" Role="Sistemas" Multiplicity="1" />
+    <End Type="UsuariosModel.SistemasRoles" Role="SistemasRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sistemas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SistemasRoles">
+        <PropertyRef Name="SistemaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VistasGruposVistas_ibfk_4">
+    <End Type="UsuariosModel.Sistemas" Role="Sistemas" Multiplicity="0..1" />
+    <End Type="UsuariosModel.VistasGruposVistas" Role="VistasGruposVistas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sistemas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VistasGruposVistas">
+        <PropertyRef Name="SistemaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_t3_t11">
+    <End Type="UsuariosModel.t1" Role="t1" Multiplicity="0..1" />
+    <End Type="UsuariosModel.t3" Role="t3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t1">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="t3">
+        <PropertyRef Name="t1id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_t3_t21">
+    <End Type="UsuariosModel.t2" Role="t2" Multiplicity="0..1" />
+    <End Type="UsuariosModel.t3" Role="t3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="t2">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="t3">
+        <PropertyRef Name="t2id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VistasTablas_ibfk_2">
+    <End Type="UsuariosModel.Tablas" Role="Tablas" Multiplicity="1" />
+    <End Type="UsuariosModel.VistasTablas" Role="VistasTablas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tablas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VistasTablas">
+        <PropertyRef Name="TablaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tokens_Versiones1">
+    <End Type="UsuariosModel.Versiones" Role="Versiones" Multiplicity="0..1" />
+    <End Type="UsuariosModel.Tokens" Role="Tokens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Versiones">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tokens">
+        <PropertyRef Name="VersionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UsuariosRoles_Usuarios1">
+    <End Type="UsuariosModel.Usuarios" Role="Usuarios" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.UsuariosRoles" Role="UsuariosRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuariosRoles">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VistasGruposVistas_ibfk_2">
+    <End Type="UsuariosModel.Vistas" Role="Vistas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.VistasGruposVistas" Role="VistasGruposVistas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vistas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VistasGruposVistas">
+        <PropertyRef Name="VistaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VistasTablas_ibfk_1">
+    <End Type="UsuariosModel.Vistas" Role="Vistas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.VistasTablas" Role="VistasTablas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vistas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VistasTablas">
+        <PropertyRef Name="VistaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VistasTablas_ibfk_10">
+    <End Type="UsuariosModel.Vistas" Role="Vistas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="UsuariosModel.VistasFiltrosReportes" Role="VistasFiltrosReportes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vistas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="VistasFiltrosReportes">
+        <PropertyRef Name="VistaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

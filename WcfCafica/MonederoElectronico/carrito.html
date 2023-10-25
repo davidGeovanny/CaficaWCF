@@ -1,0 +1,17 @@
+<div ng-init="init()"></div>
+<ngcart-cart></ngcart-cart>
+<ngcart-checkout ng-show="RegistroCompletado==true && saldo > ngCart.totalCost() && ngCart.codigoCanje == 0" service="http" settings="{ url:'http://localhost:54363/ServiciosERP/Ventas/WSSolicitudesCanjeMonedero.svc/addSolicitudWeb' }"></ngcart-checkout>
+<div class="alert alert-warning" role="alert" ng-show="ngCart.codigoCanje > 0">
+    <p>Felicidades, acabas de realizar un canje con éxito. Te esperamos en alguna de nuestras sucursales de canje o realiza una llamada al 982-34-95 y recibe tus premios a domicilio….!!!.</p>
+</div>
+<div class="alert alert-success" role="alert" ng-show="ngCart.codigoCanje > 0">
+	Tu código de canje es: <h1><b>{{ ngCart.codigoCanje }}</b></h1>
+</div>
+<div class="alert alert-warning" role="alert" ng-show="saldo < ngCart.totalCost()">
+    Saldo insuficiente para realizar el canje
+</div>
+<br>
+<div class="alert alert-info" role="alert" ng-show="RegistroCompletado==false">
+    <p>Para continuar disfrutando los beneficios que monedero electronico brissa te ofrece, es necesario completrar tu registro.</p>
+</div>
+<button class="btn btn-success" ng-show="RegistroCompletado==false" ng-click="showRegistro()">Completar Registro</button>

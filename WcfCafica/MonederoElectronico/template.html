@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" >
+<head>
+  <title>Brissa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="lib/angular.js"></script>
+  <script src="lib/alerts.js"></script>
+  <script src="app.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <link rel="shortcut icon" href="img/favicon.png"> 
+</head>
+<body>
+<!-- NavBar -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="img/brissablanco.png">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">MOVIMIENTOS</a></li>
+        <li class="active"><a href="#">Page 1</a></li> 
+        <li><a href="#">Page 1</a></li> 
+      </ul>
+    </div>  
+  </div>
+</nav>
+<!-- NavBar -->
+<!-- Container -->
+<div class="container" ng-view>
+  
+</div>
+<!-- Container -->
+
+<!-- Footer -->
+<footer class="footer text-center">
+  <!--
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+  -->
+  <p>© 2017 Hielera Paraiso S.A. de C.V.</p>
+</footer>
+<!-- Footer -->
+
+</body>
+</html>

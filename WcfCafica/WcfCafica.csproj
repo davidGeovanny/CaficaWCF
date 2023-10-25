@@ -1,0 +1,861 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{853AF22B-F80D-4300-A57B-D103806D9770}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WcfCafica</RootNamespace>
+    <AssemblyName>WcfCafica</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.11.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebirdSql.Data.FirebirdClient.5.11.0\lib\net40-client\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JWT, Version=1.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JWT.1.3.4\lib\3.5\JWT.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CancelacionResguardo.html" />
+    <Content Include="canje.html" />
+    <Content Include="Contexts\AdminBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdminBD.edmx</DependentUpon>
+      <LastGenOutput>AdminBD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Contexts\AdminBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdminBD.edmx</DependentUpon>
+      <LastGenOutput>AdminBD.cs</LastGenOutput>
+    </Content>
+    <Content Include="Contexts\Administracion\Usuarios.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Usuarios.edmx</DependentUpon>
+      <LastGenOutput>Usuarios.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Contexts\Administracion\Usuarios.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Usuarios.edmx</DependentUpon>
+      <LastGenOutput>Usuarios1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Contexts\Empresa\Empresa.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Empresa.edmx</DependentUpon>
+      <LastGenOutput>Empresa.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Contexts\Empresa\Empresa.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Empresa.edmx</DependentUpon>
+      <LastGenOutput>Empresa.cs</LastGenOutput>
+    </Content>
+    <Content Include="Devolucion.html" />
+    <Content Include="Resguardo.html" />
+    <Content Include="ServiciosERP\Administracion\WSAccionesVistas.svc" />
+    <Content Include="ServiciosERP\Administracion\WSBDEmpresas.svc" />
+    <Content Include="ServiciosERP\Administracion\WSGruposVistas.svc" />
+    <Content Include="ServiciosERP\Administracion\WSModulos.svc" />
+    <Content Include="ServiciosERP\Administracion\WSRoles.svc" />
+    <Content Include="ServiciosERP\Administracion\WSSistemas.svc" />
+    <Content Include="ServiciosERP\Administracion\WSTablas.svc" />
+    <Content Include="ServiciosERP\Administracion\WSUsuarios.svc" />
+    <Content Include="ServiciosERP\Administracion\WSVistas.svc" />
+    <Content Include="ServiciosERP\Compras\WSOrdendeCompra.svc" />
+    <Content Include="ServiciosERP\Compras\WSProveedores.svc" />
+    <Content Include="ServiciosERP\Generales\WSCodigosISOMonedas.svc" />
+    <Content Include="ServiciosERP\Generales\WSCondicionesPago.svc" />
+    <Content Include="ServiciosERP\Compras\WSGrupoProveedores.svc" />
+    <Content Include="ServiciosERP\Generales\WSGiros.svc" />
+    <Content Include="ServiciosERP\Generales\WSImpuestos.svc" />
+    <Content Include="ServiciosERP\Generales\WSMonedas.svc" />
+    <Content Include="ServiciosERP\Generales\WSTiposCambio.svc" />
+    <Content Include="ServiciosERP\Generales\WSAreas.svc" />
+    <Content Include="ServiciosERP\Generales\WSCiudades.svc" />
+    <Content Include="ServiciosERP\Generales\WSCodigosPostales.svc" />
+    <Content Include="ServiciosERP\Generales\WSColonias.svc" />
+    <Content Include="ServiciosERP\Generales\WSDepartamentos.svc" />
+    <Content Include="ServiciosERP\Generales\WSEstados.svc" />
+    <Content Include="ServiciosERP\Generales\WSMunicipios.svc" />
+    <Content Include="ServiciosERP\Generales\WSPaises.svc" />
+    <Content Include="ServiciosERP\Generales\WSPuestos.svc" />
+    <Content Include="ServiciosERP\Generales\WSResponsables.svc" />
+    <Content Include="ServiciosERP\Generales\WSUnidades.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSAlmacenes.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSConceptosES.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSDevoluciones.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSESInventarioFisico.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSESInventarios.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSGrupoComponentes.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSGrupoUnidades.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSComponentes.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSMarcasComponentes.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSResguardos.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSSubGrupoComponentes.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSTiposComponentes.svc" />
+    <Content Include="ServiciosERP\Inventarios\WSTiposDocumentos.svc" />
+    <Content Include="ServiciosERP\Ventas\WSActivacionesCorreos.svc" />
+    <Content Include="ServiciosERP\Ventas\WSCanjes.svc" />
+    <Content Include="ServiciosERP\Ventas\WSCentrosCanjeMonedero.svc" />
+    <Content Include="ServiciosERP\Ventas\WSMovimientosMonedero.svc" />
+    <Content Include="ServiciosERP\Ventas\WSPremiosMonedero.svc" />
+    <Content Include="ServiciosERP\Ventas\WSSaldosMonedero.svc" />
+    <Content Include="ServiciosERP\Ventas\WSSociosMonedero.svc" />
+    <Content Include="ServiciosERP\Ventas\WSSolicitudesCanjeMonedero.svc" />
+    <Content Include="ServiciosERP\Ventas\WSUsuariosMonedero.svc" />
+    <Content Include="ServiciosERP\WSEmpresas.svc" />
+    <Content Include="ServiciosERP\WSLogin.svc" />
+    <Content Include="ServiciosERP\WSMenu.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contexts\AdminBD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminBD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\AdminBD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\AdminBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminBD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\AccionesVistas.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\BDEmpresas.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\BDEmpresasRoles.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\GruposVistas.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\ItemNavBar.cs" />
+    <Compile Include="Contexts\Administracion\Login.cs" />
+    <Compile Include="Contexts\Administracion\Modulos.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\Usuarios1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\Versiones.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\VistasFiltrosReportes.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Almacenes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\AlmacenesGruposComponentes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Areas.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\CentrosCanjeMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\CentrosCanjeUsuariosMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Ciudades.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\CodigosISOMonedas.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\CodigosPostales.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Colonias.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Componentes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComponentesAlmacenes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComponentesCodigosBarras.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComponentesEquivalenciasPartes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComponentesFormula.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComponentesFormulaDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComponentesImagenes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComponentesImpuestos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComprasDocs.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComprasDocsDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComprasDocsImpuestos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComprasDocsLotesSeries.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComprasDocsRelaciones.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ComprasDocsRelacionesDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ConceptosES.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\CondicionesPago.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\CondicionesPagoPlazos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ConfiguracionMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Departamentos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Empresa.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Empresa.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Empresa.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Empresa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Empresa.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Estados.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ExistenciasLotesSeries.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Giros.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\GrupoProveedores.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\GruposComponentes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\GruposUnidades.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\GruposUnidadesDetalle.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Impuestos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ImpuestosGravados.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\InventariosCostos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\InventariosES.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\InventariosESDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\InventariosESLotesSeries.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\InventariosFisicos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\InventariosFisicosDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\InventariosFisicosLotesSeries.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\InventariosSaldos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\LotesSeries.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\MarcasComponentes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ModulosRelaciones.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Monedas.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\MovimientosMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\MovimientosMonederoDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Municipios.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Paises.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\PremiosMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\PremiosMonederoDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Proveedores.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ProveedoresContactos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ProveedoresDirecciones.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Puestos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Resguardos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ResguardosDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ResguardosLotesSeries.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Responsables.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\SaldosMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\SociosMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\SolicitudesCanjeMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\SolicitudesCanjeMonederoDetalles.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\SubgruposComponentes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\TiposCambio.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\TiposComponentes.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\TiposDocumentos.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\TokensMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\Unidades.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\UsuariosMonedero.cs">
+      <DependentUpon>Empresa.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Empresa\ValidacionesBase.cs" />
+    <Compile Include="Contexts\Empresa\Validaciones\ComprasDocs.cs" />
+    <Compile Include="Contexts\Monedero\CanjeMonedero.cs" />
+    <Compile Include="Contexts\Monedero\CanjeMonederoDetalle.cs" />
+    <Compile Include="Contexts\PasswordEncrypt.cs" />
+    <Compile Include="Contexts\Administracion\PermisosEmpresasModel.cs" />
+    <Compile Include="Contexts\Administracion\PermisosFormularios.cs" />
+    <Compile Include="Contexts\Administracion\PermisosModel.cs" />
+    <Compile Include="Contexts\Administracion\Roles.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\RolesAcciones.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\Sistemas.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\SistemasRoles.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\t1.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\t2.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\t3.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\Tablas.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\Tokens.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\Usuarios.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Usuarios.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\Usuarios.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\Usuarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Usuarios.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\UsuariosRoles.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\RelacionesModel.cs" />
+    <Compile Include="Contexts\Reportes\exports.cs" />
+    <Compile Include="Contexts\Reportes\outputResource.cs" />
+    <Compile Include="Contexts\Reportes\ReporteModel.cs" />
+    <Compile Include="Contexts\Reportes\reportParameter.cs" />
+    <Compile Include="Contexts\Reportes\reportParameters.cs" />
+    <Compile Include="Contexts\Reportes\ResponseReportModel.cs" />
+    <Compile Include="Contexts\ValidarToken.cs" />
+    <Compile Include="Contexts\Administracion\Vistas.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\VistasGruposVistas.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contexts\Administracion\VistasTablas.cs">
+      <DependentUpon>Usuarios.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FormatterJsonNET\CustomHeaderMessageInspector .cs" />
+    <Compile Include="FormatterJsonNET\EnableCrossOriginResourceSharingBehavior.cs" />
+    <Compile Include="FormatterJsonNET\NewtonsoftJsonBehavior.cs" />
+    <Compile Include="FormatterJsonNET\NewtonsoftJsonBehaviorExtension.cs" />
+    <Compile Include="FormatterJsonNET\NewtonsoftJsonContentTypeMapper .cs" />
+    <Compile Include="FormatterJsonNET\NewtonsoftJsonDispatchFormatter.cs" />
+    <Compile Include="FormatterJsonNET\RawBodyWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSAccionesVistas.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSBDEmpresas.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSGruposVistas.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSModulos.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSRoles.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSSistemas.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSTablas.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSUsuarios.cs" />
+    <Compile Include="ServiciosERP\Administracion\IWSVistas.cs" />
+    <Compile Include="ServiciosERP\Administracion\WSAccionesVistas.svc.cs">
+      <DependentUpon>WSAccionesVistas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Administracion\WSBDEmpresas.svc.cs">
+      <DependentUpon>WSBDEmpresas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Administracion\WSGruposVistas.svc.cs">
+      <DependentUpon>WSGruposVistas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Administracion\WSModulos.svc.cs">
+      <DependentUpon>WSModulos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Administracion\WSRoles.svc.cs">
+      <DependentUpon>WSRoles.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Administracion\WSSistemas.svc.cs">
+      <DependentUpon>WSSistemas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Administracion\WSTablas.svc.cs">
+      <DependentUpon>WSTablas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Administracion\WSUsuarios.svc.cs">
+      <DependentUpon>WSUsuarios.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Administracion\WSVistas.svc.cs">
+      <DependentUpon>WSVistas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Compras\IWSOrdendeCompra.cs" />
+    <Compile Include="ServiciosERP\Compras\IWSProveedores.cs" />
+    <Compile Include="ServiciosERP\Compras\WSOrdendeCompra.svc.cs">
+      <DependentUpon>WSOrdendeCompra.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Compras\WSProveedores.svc.cs">
+      <DependentUpon>WSProveedores.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\IWSCodigosISOMonedas.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSCondicionesPago.cs" />
+    <Compile Include="ServiciosERP\Compras\IWSGrupoProveedores.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSGiros.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSImpuestos.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSMonedas.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSTiposCambio.cs" />
+    <Compile Include="ServiciosERP\Generales\WSCodigosISOMonedas.svc.cs">
+      <DependentUpon>WSCodigosISOMonedas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSCondicionesPago.svc.cs">
+      <DependentUpon>WSCondicionesPago.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Compras\WSGrupoProveedores.svc.cs">
+      <DependentUpon>WSGrupoProveedores.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSGiros.svc.cs">
+      <DependentUpon>WSGiros.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSImpuestos.svc.cs">
+      <DependentUpon>WSImpuestos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSMonedas.svc.cs">
+      <DependentUpon>WSMonedas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSTiposCambio.svc.cs">
+      <DependentUpon>WSTiposCambio.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\IWSAreas.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSCiudades.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSCodigosPostales.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSColonias.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSDepartamentos.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSEstados.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSMunicipios.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSPaises.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSPuestos.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSResponsables.cs" />
+    <Compile Include="ServiciosERP\Generales\IWSUnidades.cs" />
+    <Compile Include="ServiciosERP\Generales\WSAreas.svc.cs">
+      <DependentUpon>WSAreas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSCiudades.svc.cs">
+      <DependentUpon>WSCiudades.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSCodigosPostales.svc.cs">
+      <DependentUpon>WSCodigosPostales.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSColonias.svc.cs">
+      <DependentUpon>WSColonias.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSDepartamentos.svc.cs">
+      <DependentUpon>WSDepartamentos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSEstados.svc.cs">
+      <DependentUpon>WSEstados.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSMunicipios.svc.cs">
+      <DependentUpon>WSMunicipios.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSPaises.svc.cs">
+      <DependentUpon>WSPaises.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSPuestos.svc.cs">
+      <DependentUpon>WSPuestos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSResponsables.svc.cs">
+      <DependentUpon>WSResponsables.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Generales\WSUnidades.svc.cs">
+      <DependentUpon>WSUnidades.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\Inventarios.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSAlmacenes.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSConceptosES.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSDevoluciones.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSESInventarioFisico.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSESInventarios.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSGrupoComponentes.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSGrupoUnidades.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSComponentes.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSMarcasComponentes.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSResguardos.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSSubGrupoComponentes.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSTiposComponentes.cs" />
+    <Compile Include="ServiciosERP\Inventarios\IWSTiposDocumentos.cs" />
+    <Compile Include="ServiciosERP\Inventarios\WSAlmacenes.svc.cs">
+      <DependentUpon>WSAlmacenes.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSConceptosES.svc.cs">
+      <DependentUpon>WSConceptosES.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSDevoluciones.svc.cs">
+      <DependentUpon>WSDevoluciones.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSESInventarioFisico.svc.cs">
+      <DependentUpon>WSESInventarioFisico.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSESInventarios.svc.cs">
+      <DependentUpon>WSESInventarios.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSGrupoComponentes.svc.cs">
+      <DependentUpon>WSGrupoComponentes.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSGrupoUnidades.svc.cs">
+      <DependentUpon>WSGrupoUnidades.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSComponentes.svc.cs">
+      <DependentUpon>WSComponentes.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSMarcasComponentes.svc.cs">
+      <DependentUpon>WSMarcasComponentes.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSResguardos.svc.cs">
+      <DependentUpon>WSResguardos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSSubGrupoComponentes.svc.cs">
+      <DependentUpon>WSSubGrupoComponentes.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSTiposComponentes.svc.cs">
+      <DependentUpon>WSTiposComponentes.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Inventarios\WSTiposDocumentos.svc.cs">
+      <DependentUpon>WSTiposDocumentos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\IWSBaseLike.cs" />
+    <Compile Include="ServiciosERP\IWSBase.cs" />
+    <Compile Include="ServiciosERP\IWSBaseDocumento.cs" />
+    <Compile Include="ServiciosERP\IWSEmpresas.cs" />
+    <Compile Include="ServiciosERP\IWSLogin.cs" />
+    <Compile Include="ServiciosERP\IWSMenu.cs" />
+    <Compile Include="ServiciosERP\Ventas\CargosAbonos.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSActivacionesCorreos.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSCanjes.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSCentrosCanjeMonedero.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSMovimientosMonedero.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSPremiosMonedero.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSSaldosMonedero.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSSociosMonedero.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSSolicitudesCanjeMonedero.cs" />
+    <Compile Include="ServiciosERP\Ventas\IWSUsuariosMonedero.cs" />
+    <Compile Include="ServiciosERP\Ventas\WSActivacionesCorreos.svc.cs">
+      <DependentUpon>WSActivacionesCorreos.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Ventas\WSCanjes.svc.cs">
+      <DependentUpon>WSCanjes.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Ventas\WSCentrosCanjeMonedero.svc.cs">
+      <DependentUpon>WSCentrosCanjeMonedero.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Ventas\WSMovimientosMonedero.svc.cs">
+      <DependentUpon>WSMovimientosMonedero.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Ventas\WSPremiosMonedero.svc.cs">
+      <DependentUpon>WSPremiosMonedero.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Ventas\WSSaldosMonedero.svc.cs">
+      <DependentUpon>WSSaldosMonedero.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Ventas\WSSociosMonedero.svc.cs">
+      <DependentUpon>WSSociosMonedero.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Ventas\WSSolicitudesCanjeMonedero.svc.cs">
+      <DependentUpon>WSSolicitudesCanjeMonedero.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\Ventas\WSUsuariosMonedero.svc.cs">
+      <DependentUpon>WSUsuariosMonedero.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\VisorReporteViewModel.cs" />
+    <Compile Include="ServiciosERP\WsBase.cs" />
+    <Compile Include="ServiciosERP\WSEmpresas.svc.cs">
+      <DependentUpon>WSEmpresas.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\WSLogin.svc.cs">
+      <DependentUpon>WSLogin.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ServiciosERP\WSMenu.svc.cs">
+      <DependentUpon>WSMenu.svc</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <EntityDeploy Include="Contexts\Administracion\Usuarios.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Usuarios.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Contexts\Administracion\Usuarios.edmx.diagram">
+      <DependentUpon>Usuarios.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Contexts\AdminBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdminBD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Contexts\AdminBD.edmx.diagram">
+      <DependentUpon>AdminBD.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Contexts\Empresa\Empresa.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Empresa.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Contexts\Empresa\Empresa.edmx.diagram">
+      <DependentUpon>Empresa.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\CaficaERP.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54363</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54363/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

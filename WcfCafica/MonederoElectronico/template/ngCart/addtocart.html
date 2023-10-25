@@ -1,0 +1,30 @@
+<div ng-hide="attrs.id">
+    <a class="btn btn-lg btn-primary" ng-disabled="true" ng-transclude></a>
+</div>
+<div ng-show="attrs.id">
+    
+    <div> 
+        <span ng-show="quantityMax">
+            <select  name="quantity" id="quantity" ng-model="q" ng-options=" v for v in qtyOpt"></select>
+        </span>
+        <a class="btn btn-sm btn-primary" ng-click="ngCart.addItem(id, name, price, q, data)" ng-transclude>Agregar</a>    
+    </div>
+    <!--
+    <span class="label label-info" ng-show="inCart()">
+        Este artículo ya está en el carrito. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remover</a>
+    </span>-->
+    <div class="new-tag2" ng-show="inCart()">
+        <h6>
+            <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">
+                Quitar<br>
+                <span class="glyphicon glyphicon-remove"></span>
+            </a>
+        </h6>
+    </div>
+    <!--
+    <mark  ng-show="inCart()">
+        Este artículo ya está en el carrito. <a ng-click="ngCart.removeItemById(id)" style="cursor: pointer;">Remover</a>
+    </mark>
+    -->
+</div>
+

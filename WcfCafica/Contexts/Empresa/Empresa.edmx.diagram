@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0236a85e2bbc4a0fafd4175a07b641fb" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="EmpresaModel.Almacenes" Width="1.5" PointX="6" PointY="15.5" />
+        <EntityTypeShape EntityType="EmpresaModel.AlmacenesGruposComponentes" Width="1.5" PointX="6" PointY="31.375" />
+        <EntityTypeShape EntityType="EmpresaModel.Areas" Width="1.5" PointX="6.75" PointY="5.125" />
+        <EntityTypeShape EntityType="EmpresaModel.CentrosCanjeMonedero" Width="1.5" PointX="8.25" PointY="18.375" />
+        <EntityTypeShape EntityType="EmpresaModel.CentrosCanjeUsuariosMonedero" Width="1.5" PointX="10.5" PointY="20.625" />
+        <EntityTypeShape EntityType="EmpresaModel.Ciudades" Width="1.5" PointX="3.75" PointY="12.125" />
+        <EntityTypeShape EntityType="EmpresaModel.CodigosISOMonedas" Width="1.5" PointX="1.5" PointY="91.25" />
+        <EntityTypeShape EntityType="EmpresaModel.CodigosPostales" Width="1.5" PointX="3.75" PointY="19.625" />
+        <EntityTypeShape EntityType="EmpresaModel.Colonias" Width="1.5" PointX="3.75" PointY="25" />
+        <EntityTypeShape EntityType="EmpresaModel.Componentes" Width="1.5" PointX="3" PointY="36.375" />
+        <EntityTypeShape EntityType="EmpresaModel.ComponentesAlmacenes" Width="1.5" PointX="8.25" PointY="39.625" />
+        <EntityTypeShape EntityType="EmpresaModel.ComponentesCodigosBarras" Width="1.5" PointX="5.25" PointY="35.25" />
+        <EntityTypeShape EntityType="EmpresaModel.ComponentesEquivalenciasPartes" Width="1.5" PointX="5.25" PointY="45.25" />
+        <EntityTypeShape EntityType="EmpresaModel.ComponentesFormula" Width="1.5" PointX="5.25" PointY="81.625" />
+        <EntityTypeShape EntityType="EmpresaModel.ComponentesFormulaDetalles" Width="1.5" PointX="7.5" PointY="58.5" />
+        <EntityTypeShape EntityType="EmpresaModel.ComponentesImagenes" Width="1.5" PointX="5.25" PointY="78.375" />
+        <EntityTypeShape EntityType="EmpresaModel.ComponentesImpuestos" Width="1.5" PointX="5.25" PointY="49.875" />
+        <EntityTypeShape EntityType="EmpresaModel.ComprasDocs" Width="1.5" PointX="6" PointY="93.625" />
+        <EntityTypeShape EntityType="EmpresaModel.ComprasDocsImpuestos" Width="1.5" PointX="5.25" PointY="56.125" />
+        <EntityTypeShape EntityType="EmpresaModel.ComprasDocsLotesSeries" Width="1.5" PointX="10.5" PointY="65.625" />
+        <EntityTypeShape EntityType="EmpresaModel.ComprasDocsRelaciones" Width="1.5" PointX="8.25" PointY="96.5" />
+        <EntityTypeShape EntityType="EmpresaModel.ComprasDocsRelacionesDetalles" Width="1.5" PointX="10.5" PointY="46.5" />
+        <EntityTypeShape EntityType="EmpresaModel.ConceptosES" Width="1.5" PointX="11.25" PointY="24.5" />
+        <EntityTypeShape EntityType="EmpresaModel.CondicionesPago" Width="1.5" PointX="3.75" PointY="95" />
+        <EntityTypeShape EntityType="EmpresaModel.CondicionesPagoPlazos" Width="1.5" PointX="6" PointY="103.25" />
+        <EntityTypeShape EntityType="EmpresaModel.Departamentos" Width="1.5" PointX="6.75" PointY="11.75" />
+        <EntityTypeShape EntityType="EmpresaModel.Estados" Width="1.5" PointX="1.5" PointY="14.75" />
+        <EntityTypeShape EntityType="EmpresaModel.ExistenciasLotesSeries" Width="1.5" PointX="7.5" PointY="64.25" />
+        <EntityTypeShape EntityType="EmpresaModel.Giros" Width="1.5" PointX="1.5" PointY="102.5" />
+        <EntityTypeShape EntityType="EmpresaModel.GrupoProveedores" Width="1.5" PointX="1.5" PointY="99.375" />
+        <EntityTypeShape EntityType="EmpresaModel.GruposComponentes" Width="1.5" PointX="0.75" PointY="45.625" />
+        <EntityTypeShape EntityType="EmpresaModel.GruposUnidades" Width="1.5" PointX="0.75" PointY="53.75" />
+        <EntityTypeShape EntityType="EmpresaModel.GruposUnidadesDetalle" Width="1.5" PointX="6" PointY="40.125" />
+        <EntityTypeShape EntityType="EmpresaModel.Impuestos" Width="1.5" PointX="3" PointY="55.75" />
+        <EntityTypeShape EntityType="EmpresaModel.ImpuestosGravados" Width="1.5" PointX="5.25" PointY="60.875" />
+        <EntityTypeShape EntityType="EmpresaModel.InventariosCostos" Width="1.5" PointX="8.25" PointY="35.125" />
+        <EntityTypeShape EntityType="EmpresaModel.InventariosES" Width="1.5" PointX="11.25" PointY="50.125" />
+        <EntityTypeShape EntityType="EmpresaModel.InventariosESDetalles" Width="1.5" PointX="13.5" PointY="39" />
+        <EntityTypeShape EntityType="EmpresaModel.InventariosESLotesSeries" Width="1.5" PointX="15.75" PointY="64.75" />
+        <EntityTypeShape EntityType="EmpresaModel.InventariosFisicos" Width="1.5" PointX="13.5" PointY="45.5" />
+        <EntityTypeShape EntityType="EmpresaModel.InventariosFisicosDetalles" Width="1.5" PointX="15.75" PointY="39.625" />
+        <EntityTypeShape EntityType="EmpresaModel.InventariosFisicosLotesSeries" Width="1.5" PointX="18" PointY="63.125" />
+        <EntityTypeShape EntityType="EmpresaModel.InventariosSaldos" Width="1.5" PointX="11.25" PointY="39.75" />
+        <EntityTypeShape EntityType="EmpresaModel.LotesSeries" Width="1.5" PointX="5.25" PointY="85.5" />
+        <EntityTypeShape EntityType="EmpresaModel.MarcasComponentes" Width="1.5" PointX="0.75" PointY="31.5" />
+        <EntityTypeShape EntityType="EmpresaModel.ModulosRelaciones" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmpresaModel.Monedas" Width="1.5" PointX="3.75" PointY="90.5" />
+        <EntityTypeShape EntityType="EmpresaModel.Municipios" Width="1.5" PointX="1.5" PointY="9.75" />
+        <EntityTypeShape EntityType="EmpresaModel.Paises" Width="1.5" PointX="1.5" PointY="19.875" />
+        <EntityTypeShape EntityType="EmpresaModel.PremiosMonederoDetalles" Width="1.5" PointX="11.25" PointY="34.875" />
+        <EntityTypeShape EntityType="EmpresaModel.Proveedores" Width="1.5" PointX="3.75" PointY="99.125" />
+        <EntityTypeShape EntityType="EmpresaModel.ProveedoresContactos" Width="1.5" PointX="10" PointY="58" />
+        <EntityTypeShape EntityType="EmpresaModel.ProveedoresDirecciones" Width="1.5" PointX="8" PointY="51.75" />
+        <EntityTypeShape EntityType="EmpresaModel.Puestos" Width="1.5" PointX="6.75" PointY="8.25" />
+        <EntityTypeShape EntityType="EmpresaModel.Resguardos" Width="1.5" PointX="11.25" PointY="7.75" />
+        <EntityTypeShape EntityType="EmpresaModel.ResguardosDetalles" Width="1.5" PointX="13.5" PointY="33.5" />
+        <EntityTypeShape EntityType="EmpresaModel.ResguardosLotesSeries" Width="1.5" PointX="15.75" PointY="59.125" />
+        <EntityTypeShape EntityType="EmpresaModel.Responsables" Width="1.5" PointX="9" PointY="7.625" />
+        <EntityTypeShape EntityType="EmpresaModel.SubgruposComponentes" Width="1.5" PointX="0.75" PointY="35.125" />
+        <EntityTypeShape EntityType="EmpresaModel.TiposCambio" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="EmpresaModel.TiposComponentes" Width="1.5" PointX="1.5" PointY="49.75" />
+        <EntityTypeShape EntityType="EmpresaModel.TiposDocumentos" Width="1.5" PointX="9" PointY="25.125" />
+        <EntityTypeShape EntityType="EmpresaModel.TokensMonedero" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="EmpresaModel.Unidades" Width="1.5" PointX="0.75" PointY="39.5" />
+        <EntityTypeShape EntityType="EmpresaModel.UsuariosMonedero" Width="1.5" PointX="13" PointY="16.375" />
+        <AssociationConnector Association="EmpresaModel.fk_Almacenes_Ciudades1" />
+        <AssociationConnector Association="EmpresaModel.fk_Almacenes_CodigosPostales1" />
+        <AssociationConnector Association="EmpresaModel.fk_Almacenes_Colonias1" />
+        <AssociationConnector Association="EmpresaModel.fk_Almacenes_Estados1" />
+        <AssociationConnector Association="EmpresaModel.fk_Almacenes_Municipios1" />
+        <AssociationConnector Association="EmpresaModel.fk_Almacenes_Paises1" />
+        <AssociationConnector Association="EmpresaModel.fk_Almacenes_TiposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_AlmacenesGruposComponentes_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_CentrosCanjeMonedero_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesAlmacenes_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocs_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventarios_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventariosDetalles_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ExistenciasLotesSeries_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosES_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosSaldos_Almacenes1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosSaldos_Almacenes10" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosSaldos_Almacenes100" />
+        <AssociationConnector Association="EmpresaModel.fk_Resguardos_Almacenes" />
+        <AssociationConnector Association="EmpresaModel.fk_ResguardosDetalles_Almacenes" />
+        <AssociationConnector Association="EmpresaModel.fk_AlmacenesGruposComponentes_GruposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesAlmacenes_AlmacenesGruposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_Responsables_Areas1" />
+        <AssociationConnector Association="EmpresaModel.fk_CentrosCanjeUsuarioMonedero_CentrosCanjeMonedero1" />
+        <AssociationConnector Association="EmpresaModel.Ciudades_ibfk_1" />
+        <AssociationConnector Association="EmpresaModel.Ciudades_ibfk_2" />
+        <AssociationConnector Association="EmpresaModel.Ciudades_ibfk_3" />
+        <AssociationConnector Association="EmpresaModel.CodigosPostales_ibfk_1" />
+        <AssociationConnector Association="EmpresaModel.Colonias_ibfk_2" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresContactos_Ciudades1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresDirecciones_Ciudades1" />
+        <AssociationConnector Association="EmpresaModel.fk_UsuariosMonedero_Ciudades1" />
+        <AssociationConnector Association="EmpresaModel.fk_Monedas_CodigosISOMonedas1" />
+        <AssociationConnector Association="EmpresaModel.CodigosPostales_ibfk_2" />
+        <AssociationConnector Association="EmpresaModel.CodigosPostales_ibfk_3" />
+        <AssociationConnector Association="EmpresaModel.CodigosPostales_ibfk_4" />
+        <AssociationConnector Association="EmpresaModel.Colonias_ibfk_1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresContactos_CodigosPostales1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresDirecciones_CodigosPostales1" />
+        <AssociationConnector Association="EmpresaModel.fk_UsuariosMonedero_CodigosPostales1" />
+        <AssociationConnector Association="EmpresaModel.Colonias_ibfk_3" />
+        <AssociationConnector Association="EmpresaModel.Colonias_ibfk_4" />
+        <AssociationConnector Association="EmpresaModel.Colonias_ibfk_5" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresContactos_Colonias1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresDirecciones_Colonias1" />
+        <AssociationConnector Association="EmpresaModel.fk_UsuariosMonedero_Colonias1" />
+        <AssociationConnector Association="EmpresaModel.fk_Componentes_GruposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_Componentes_GruposUnidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_Componentes_Marcas_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_Componentes_SubgruposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_Componentes_TiposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_Componentes_Unidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_Componentes_Unidades2" />
+        <AssociationConnector Association="EmpresaModel.fk_Componentes_Unidades3" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesAlmacenes_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesAlmacenes_Componentes10" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesAlmacenes_Componentes100" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesCodigosBarra_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesCodigosBarra_Componentes10" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesEquivalenciasPartes_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesFormula_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesImpuestos_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventariosDetalles_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventariosDetalles_Componentes10" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventariosDetalles_Componentes1001" />
+        <AssociationConnector Association="EmpresaModel.fk_ExistenciasLotesSeries_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosSaldos_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosSaldos_Componentes10" />
+        <AssociationConnector Association="EmpresaModel.fk_PremiosMonederoDetalles_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ResguardosDetalles_Componentes" />
+        <AssociationConnector Association="EmpresaModel.fk_ResguardosLotesSeries_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventariosDetalles_AlmacenesGruposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventariosDetalles_AlmacenesGruposComponentes10" />
+        <AssociationConnector Association="EmpresaModel.fk_ResguardosDetalles_ComponentesAlmacenes" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesCodigosBarra_Unidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesEquivalenciasPartes_MarcasComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesFormulaDetalles_ComponentesFormula1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesFormula_Unidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComponentesImpuestos_Impuestos1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocs_CondicionesPago1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocs_Departamentos1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocs_Monedas1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocs_Proveedores1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocs_Responsables1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsDetalles_ComprasDocs10" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsDetalles_ComprasDocs100" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsRelaciones_ComprasDocs1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsImpuestos_Impuestos1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsLotesSeries_LotesSeries1" />
+        <AssociationConnector Association="EmpresaModel.fk_ConceptosES_TiposDocumentos1" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventarios_ConceptosES1" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventariosDetalles_ConceptosES1" />
+        <AssociationConnector Association="EmpresaModel.fk_CondicionesPagoPlazos_CondicionesPago1" />
+        <AssociationConnector Association="EmpresaModel.fk_Proveedores_CondicionesPago1" />
+        <AssociationConnector Association="EmpresaModel.fk_Puestos_Departamentos1" />
+        <AssociationConnector Association="EmpresaModel.fk_Responsables_Departamentos1" />
+        <AssociationConnector Association="EmpresaModel.Estados_ibfk_1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresContactos_Estados1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresDirecciones_Estados1" />
+        <AssociationConnector Association="EmpresaModel.fk_UsuariosMonedero_Estados1" />
+        <AssociationConnector Association="EmpresaModel.Municipios_ibfk_2" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosFisicosLotesSeries_LotesSeries10" />
+        <AssociationConnector Association="EmpresaModel.fk_Proveedores_Giros1" />
+        <AssociationConnector Association="EmpresaModel.fk_Proveedores_GrupoProveedores1" />
+        <AssociationConnector Association="EmpresaModel.fk_GruposComponentes_TiposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_SubgruposComponentes_GruposComponentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_GruposUnidadesDetalle_GruposUnidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_GruposUnidadesDetalle_Unidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_GruposUnidadesDetalle_Unidades2" />
+        <AssociationConnector Association="EmpresaModel.fk_Impuestos_Unidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_ImpuestosGravados_Impuestos1" />
+        <AssociationConnector Association="EmpresaModel.fk_ImpuestosGravados_Impuestos2" />
+        <AssociationConnector Association="EmpresaModel.fk_ESInventariosDetalles_ESInventarios1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosES_TiposDocumentos1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosFisicos_InventariosES1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosFisicos_InventariosES2" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosESLotesSeries_InventariosESDetalles1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosFisicosDetalles_InventariosESDetalles1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosESLotesSeries_LotesSeries1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosFisicosDetalles_InventariosFisicos1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosFisicosLotesSeries_InventariosFisicosDetalles1" />
+        <AssociationConnector Association="EmpresaModel.fk_InventariosFisicosLotesSeries_LotesSeries1" />
+        <AssociationConnector Association="EmpresaModel.fk_Resguardos_LotesSeries" />
+        <AssociationConnector Association="EmpresaModel.fk_Proveedores_Monedas1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresContactos_Municipios1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresDirecciones_Municipios1" />
+        <AssociationConnector Association="EmpresaModel.fk_UsuariosMonedero_Municipios1" />
+        <AssociationConnector Association="EmpresaModel.Municipios_ibfk_1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresContactos_Paises1" />
+        <AssociationConnector Association="EmpresaModel.fk_ProveedoresDirecciones_Paises1" />
+        <AssociationConnector Association="EmpresaModel.fk_UsuariosMonedero_Paises1" />
+        <AssociationConnector Association="EmpresaModel.fk_PremiosMonederoDetalles_Unidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_PremiosMonederoDetalles_Unidades2" />
+        <AssociationConnector Association="EmpresaModel.fk_DireccionesProveedores_Proveedores1" />
+        <AssociationConnector Association="EmpresaModel.fk_DireccionesProveedores_Proveedores10" />
+        <AssociationConnector Association="EmpresaModel.fk_Responsables_Puestos1" />
+        <AssociationConnector Association="EmpresaModel.fk_Resguardos_Responsables" />
+        <AssociationConnector Association="EmpresaModel.fk_ResguardosDetalles_Resguardos" />
+        <AssociationConnector Association="EmpresaModel.fk_ResguardosLotesSeries_Resguardos1" />
+        <AssociationConnector Association="EmpresaModel.fk_ResguardosLotesSeries_ResguardosDetalles" />
+        <AssociationConnector Association="EmpresaModel.fk_ResguardosLotesSeries_Responsables1" />
+        <EntityTypeShape EntityType="EmpresaModel.ComprasDocsDetalles" Width="1.5" PointX="8.25" PointY="69.25" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsDetalles_Componentes1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsDetalles_ComprasDocs1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsDetalles_ComprasDocs1000" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsDetalles_GruposUnidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsDetalles_Unidades1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsDetalles_Unidades2" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsLotesSeries_ComprasDocsDetalles1" />
+        <AssociationConnector Association="EmpresaModel.fk_ComprasDocsRelacionesDetalles_ComprasDocs1" />
+        <EntityTypeShape EntityType="EmpresaModel.ConfiguracionMonedero" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="EmpresaModel.MovimientosMonederoDetalles" Width="1.5" PointX="20.5" PointY="15.625" />
+        <EntityTypeShape EntityType="EmpresaModel.PremiosMonedero" Width="1.5" PointX="15.25" PointY="12.25" />
+        <EntityTypeShape EntityType="EmpresaModel.SaldosMonedero" Width="1.5" PointX="15.25" PointY="20.875" />
+        <EntityTypeShape EntityType="EmpresaModel.SociosMonedero" Width="1.5" PointX="16" PointY="7.25" />
+        <EntityTypeShape EntityType="EmpresaModel.SolicitudesCanjeMonedero" Width="1.5" PointX="15.25" PointY="16.5" />
+        <EntityTypeShape EntityType="EmpresaModel.SolicitudesCanjeMonederoDetalles" Width="1.5" PointX="17.5" PointY="18" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonederoDetalles_PremiosMonedero1" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonederoDetalles_SolicitudesCanjeMonederoDetall1" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonedero_PremiosMonedero10" />
+        <AssociationConnector Association="EmpresaModel.fk_PremiosMonederoDetalles_PremiosMonedero1" />
+        <AssociationConnector Association="EmpresaModel.fk_SaldosMonedero_UsuariosMonedero1" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonedero_UsuariosMonedero100" />
+        <AssociationConnector Association="EmpresaModel.fk_SolicitudesCanjeMonederoDetalles_SolicitudesCanjeMonedero1" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonedero_UsuariosMonedero10" />
+        <EntityTypeShape EntityType="EmpresaModel.MovimientosMonedero" Width="1.5" PointX="18.25" PointY="12.125" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonedero_CentrosCanjeMonedero1" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonedero_SociosMonedero1" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonedero_UsuariosMonedero1" />
+        <AssociationConnector Association="EmpresaModel.fk_MovimientosMonederoDetalles_MovimientosMonedero1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

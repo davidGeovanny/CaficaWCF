@@ -1,0 +1,308 @@
+<!-- Main -->
+<div class="row" ng-init="init()">
+  <div class='col-sm-12'>
+    <ol class="breadcrumb">
+      <li><a href="#">Inicio</a></li>
+      <li class="active">Movimientos</li>        
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <div class='col-sm-12'>
+    <h2>Movimientos</h2>
+    <hr/>
+  </div>
+</div>  
+<div class="row">
+  <div class='col-sm-12'>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Pts</th>
+          <th>Monto Ticket</th>
+          <th>Folio</th>
+          <th>Estacion</th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll='getMovimientosxUsuario()' infinite-scroll-disabled='$scope.CargandoMovimientos' infinite-scroll-distance='0'>
+        <tr ng-repeat="mov in Movimientos">
+          <td>{{ mov.Canje==undefined ? mov.Abono : mov.Canje }}</td>
+          <td>{{ mov.MontoTicket | currency }}</td>
+          <td>{{ mov.FolioTicket }}</td>
+          <td>{{ mov.SociosMonedero==undefined ? mov.CentrosCanjeMonedero.Nombre : mov.SociosMonedero.Nombre }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>    
+<hr>
+<!-- Paginación 
+<div class="row">
+  <div class='col-sm-12'>
+    <div class="pager">
+      <ul>
+        <li><a href="#">&larr; Anterior</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">Siguiente &rarr;</a></li>
+      </ul>     
+    </div>  
+  </div>  
+</div>
+Paginación -->
+<!-- Main -->
+<!-- Boton Flotante -->
+<div id="container-floating">
+  <!--
+  <div class="nd5 nds" data-toggle="tooltip" data-placement="left" data-original-title="Vacio">
+    <p class="letter">D</p>
+  </div>
+  <div class="nd4 nds" data-toggle="tooltip" data-placement="left" data-original-title="Vacio">
+    <p class="letter">C</p>
+  </div>
+  -->
+  <div class="nd3 nds" data-placement="left" data-original-title="OGA" data-toggle="modal" ng-click="ShowRegistroOga()">
+  </div>
+  <div class="nd1 nds" data-placement="left" data-original-title="Brissa" data-toggle="modal" ng-click="ShowRegistroBrissa()">
+  </div>
+  <div class="nd4 nds" data-placement="left" data-original-title="ViaRapida" data-toggle="modal" ng-click="ShowRegistroViaRapida()">
+  </div>
+  <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create">
+    <p class="plus">+</p>
+    <img class="edit" src="img/arriba.png">
+  </div>
+</div>
+<!-- Boton Flotante -->
+<!-- Inicio Modal OGA -->
+<div id="myModalMovimientosOga" class="modal fade" role="dialog" style="z-index:1049;">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Registro de Tickets OGA</h4>
+      </div>
+      <div class="modal-body">
+         <form id="FrmMovimientosOga" name="FrmMovimientosOga" class="form-horizontal">
+          <div class="panel panel-info">
+            <div class="panel-heading"><center>Datos</center></div>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosOga.fecha.$error.required && FrmMovimientosOga.fecha.$touched}">
+            <div class="col-sm-4">
+                <label class="control-label" for="fecha">Fecha:</label>
+            </div>
+            <div class="col-sm-12">
+              <p class="input-group">
+                <input type="text" name="fecha" id="fecha" class="form-control" uib-datepicker-popup="{{format}}" ng-model="Movimiento.FechaHora" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+              </p>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosOga.folio.$error.required && FrmMovimientosOga.folio.$touched}">
+            <div class="col-sm-4">
+              <label class="control-label" for="folio">Secuencia:</label>
+            </div>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" name="folio" id="folio" ng-model="Movimiento.FolioTicket" required>
+                <span  ng-show="FrmMovimientosOga.folio.$error.required && FrmMovimientosOga.folio.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosOga.importe.$error.required && FrmMovimientosOga.importe.$touched}">
+            <div class="col-sm-4">
+                <label class="control-label" for="importe">Importe:</label>
+            </div>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" name="importe" id="importe" ng-model="Movimiento.MontoTicket" format="currency" required>
+                <span  ng-show="FrmMovimientosOga.importe.$error.required && FrmMovimientosOga.importe.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosOga.socio.$error.required && FrmMovimientosOga.socio.$touched}">
+            <div class="col-sm-4">
+                <label lass="control-label" for="empresa">Estación OGA:</label>
+            </div>
+            <div class="col-sm-12">
+                <select class="form-control" id="empresa" name="socio" id="socio" ng-model="Movimiento.SocioMonederoId" ng-options="SocioMonedero.Id as SocioMonedero.Nombre for SocioMonedero in SociosMonedero" required>
+                <span ng-show="FrmMovimientosOga.socio.$error.required && FrmMovimientosOga.socio.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </select>
+            </div>
+          </div>
+        </form> 
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-info  pull-left" uib-popover-template="'PopoverOgaTemplate.html'" popover-placement="top-left" popover-trigger="'outsideClick'" >Ayuda </button>
+  <script type="text/ng-template" id="PopoverOgaTemplate.html">
+        <div >
+         <img ng-src="http://172.16.5.72:8080/MonederoElectronico/img/ticketoga.jpg">
+        </div>
+    </script>
+        <button ng-click="Guardar()" type="button" class="btn btn-success" ng-disabled="FrmMovimientosOga.$invalid || savingfrm == true">
+           <i class="fa fa-spinner fa-spin" ng-show="savingfrm"></i>
+           <span ng-show="savingfrm">Guardando</span>
+           <span ng-hide="savingfrm">Guardar</span>
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<!-- Inicio Modal BRISSA -->
+<div id="myModalMovimientosBrissa" class="modal fade" role="dialog" style="z-index:1049;">
+  <div class="modal-dialog">
+  <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Registro de Tickets Brissa</h4>
+      </div>
+      <div class="modal-body">
+        <form id="FrmMovimientosBrissa" name="FrmMovimientosBrissa" class="form-horizontal">
+          <div class="panel panel-info">
+            <div class="panel-heading"><center>Datos</center></div>
+          </div>
+        
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosBrissa.fecha.$error.required && FrmMovimientosBrissa.fecha.$touched}">
+            <div class="col-sm-4">
+              <label class="control-label" for="fecha">Fecha:</label>
+            </div>
+            <div class="col-sm-12">
+              <p class="input-group">
+              <input type="text" name="fecha" id="fecha" class="form-control" uib-datepicker-popup="{{format}}" ng-model="Movimiento.FechaHora" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+              </p>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosBrissa.folio.$error.required && FrmMovimientosBrissa.folio.$touched}">
+            <div class="col-sm-4">
+              <label class="control-label" for="folio">Folio:</label>
+            </div>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="folio" id="folio" ng-model="Movimiento.FolioTicket" required>
+              <span  ng-show="FrmMovimientosBrissa.folio.$error.required && FrmMovimientosBrissa.folio.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosBrissa.importe.$error.required && FrmMovimientosBrissa.importe.$touched}">
+            <div class="col-sm-4">
+              <label class="control-label" for="importe">Importe:</label>
+            </div>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="importe" id="importe" ng-model="Movimiento.MontoTicket" format="currency" required>
+              <span  ng-show="FrmMovimientosBrissa.importe.$error.required && FrmMovimientosBrissa.importe.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+        </form> 
+         <div class=class="col-sm-4">  
+            <label class="control-label" >*Los tickets podrán abonarse después de 24 hrs a partir de la fecha de compra.</label>
+          </div>
+      </div>
+      <div class="modal-footer">
+         <button type="button" class="btn btn-info  pull-left" uib-popover-template="'PopoverBrissaTemplate.html'" popover-placement="top-left" popover-trigger="'outsideClick'" >Ayuda </button>
+  <script type="text/ng-template" id="PopoverBrissaTemplate.html">
+       <div>
+        <div uib-carousel active="active" interval="5000" no-wrap="noWrapSlides">
+          <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+            <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div class="carousel-caption">
+              <h4>{{slide.text}}</h4>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+        <button ng-click="GuardarBrissa()" type="button" class="btn btn-success" ng-disabled="FrmMovimientosBrissa.$invalid || savingfrm == true">
+        <i class="fa fa-spinner fa-spin" ng-show="savingfrm"></i>
+        <span ng-show="savingfrm">Guardando</span>
+        <span ng-hide="savingfrm">Guardar</span>
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Modal VIA RAPIDA -->
+<!-- Modal -->
+<!-- Inicio Modal VIA RAPIDA -->
+<div id="myModalMovimientosViaRapida" class="modal fade" role="dialog" style="z-index:1049;">
+  <div class="modal-dialog">
+  <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Registro de Tickets Via Rapida</h4>
+      </div>
+      <div class="modal-body">
+        <form id="FrmMovimientosViaRapida" name="FrmMovimientosViaRapida" class="form-horizontal">
+          <div class="panel panel-info">
+            <div class="panel-heading"><center>Datos</center></div>
+          </div>
+         
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosViaRapida.fecha.$error.required && FrmMovimientosViaRapida.fecha.$touched}">
+            <div class="col-sm-4">
+              <label class="control-label" for="fecha">Fecha:</label>
+            </div>
+            <div class="col-sm-12">
+              <p class="input-group">
+              <input type="text" name="fecha" id="fecha" class="form-control" uib-datepicker-popup="{{format}}" ng-model="Movimiento.FechaHora" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+              </p>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosViaRapida.folio.$error.required && FrmMovimientosViaRapida.folio.$touched}">
+            <div class="col-sm-4">
+              <label class="control-label" for="folio">Folio:</label>
+            </div>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="folio" id="folio" ng-model="Movimiento.FolioTicket" required>
+              <span  ng-show="FrmMovimientosViaRapida.folio.$error.required && FrmMovimieFrmMovimientosViaRapidantosBrissa.folio.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" class="form-group has-feedback" ng-class="{'has-error': FrmMovimientosViaRapida.importe.$error.required && FrmMovimientosViaRapida.importe.$touched}">
+            <div class="col-sm-4">
+              <label class="control-label" for="importe">Importe:</label>
+            </div>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="importe" id="importe" ng-model="Movimiento.MontoTicket" format="currency" required>
+              <span  ng-show="FrmMovimientosViaRapida.importe.$error.required && FrmMovimientosViaRapida.importe.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+        </form> 
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-info  pull-left" uib-popover-template="'PopoverViaRapidaTemplate.html'" popover-placement="top-left" popover-trigger="'outsideClick'" >Ayuda </button>
+  <script type="text/ng-template" id="PopoverViaRapidaTemplate.html">
+        <div >
+         <img ng-src="http://172.16.5.72:8080/MonederoElectronico/img/ticketvia.jpg">
+        </div>
+    </script>
+        <button ng-click="GuardarViaRapida()" type="button" class="btn btn-success" ng-disabled="FrmMovimientosViaRapida.$invalid || savingfrm == true">
+        <i class="fa fa-spinner fa-spin" ng-show="savingfrm"></i>
+        <span ng-show="savingfrm">Guardando</span>
+        <span ng-hide="savingfrm">Guardar</span>
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+<!-- Fin Modal BRISSA -->
+
+<script>
+  $(document).ready(function(){
+    
+    $('[data-toggle="tooltip"]').tooltip();   
+    
+});
+</script>
+

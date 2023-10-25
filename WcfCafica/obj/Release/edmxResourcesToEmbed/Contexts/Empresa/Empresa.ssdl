@@ -1,0 +1,3845 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmpresaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Almacenes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="TipoAlmacen" Type="enum" Nullable="false" />
+    <Property Name="Activo" Type="enum" Nullable="false" />
+    <Property Name="TipoComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="Virtual" Type="enum" />
+    <Property Name="Calle" Type="varchar" MaxLength="45" />
+    <Property Name="NoExterior" Type="varchar" MaxLength="10" />
+    <Property Name="NoInterior" Type="varchar" MaxLength="10" />
+    <Property Name="ColoniaId" Type="bigint" />
+    <Property Name="CodigoPostalId" Type="bigint" />
+    <Property Name="CiudadId" Type="bigint" />
+    <Property Name="MunicipioId" Type="bigint" />
+    <Property Name="EstadoId" Type="bigint" />
+    <Property Name="PaisId" Type="bigint" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="AlmacenesGruposComponentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GrupoComponentesId" Type="bigint" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Areas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="CentrosCanjeMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="CentrosCanjeUsuariosMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioId" Type="bigint" Nullable="false" />
+    <Property Name="CentroCanjeMonederoId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Ciudades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="MunicipioId" Type="bigint" Nullable="false" />
+    <Property Name="EstadoId" Type="bigint" Nullable="false" />
+    <Property Name="PaisId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="CodigosISOMonedas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="CodigosPostales">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CiudadId" Type="bigint" Nullable="false" />
+    <Property Name="MunicipioId" Type="bigint" Nullable="false" />
+    <Property Name="EstadoId" Type="bigint" Nullable="false" />
+    <Property Name="PaisId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Colonias">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="CodigoPostalId" Type="bigint" Nullable="false" />
+    <Property Name="CiudadId" Type="bigint" Nullable="false" />
+    <Property Name="MunicipioId" Type="bigint" Nullable="false" />
+    <Property Name="EstadoId" Type="bigint" Nullable="false" />
+    <Property Name="PaisId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Componentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="NombreCorto" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="GrupoComponentesId" Type="bigint" Nullable="false" />
+    <Property Name="SubgrupoComponentesId" Type="bigint" Nullable="false" />
+    <Property Name="Activo" Type="enum" Nullable="false" />
+    <Property Name="AplicaIVA" Type="enum" />
+    <Property Name="AplicaISR" Type="enum" />
+    <Property Name="Inventariable" Type="enum" />
+    <Property Name="TipoSeguimiento" Type="enum" />
+    <Property Name="GrupoUnidadesId" Type="bigint" />
+    <Property Name="UnidadInventarioId" Type="bigint" />
+    <Property Name="UnidadVentaId" Type="bigint" />
+    <Property Name="UnidadCompraId" Type="bigint" />
+    <Property Name="Costo" Type="double" />
+    <Property Name="Rendimiento" Type="double" />
+    <Property Name="MarcaId" Type="bigint" />
+    <Property Name="NoParte" Type="varchar" MaxLength="30" />
+    <Property Name="Modelo" Type="varchar" MaxLength="30" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComponentesAlmacenes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="AlmacenesGruposComponentesId" Type="bigint" />
+    <Property Name="Maximo" Type="bigint" />
+    <Property Name="Reorden" Type="bigint" />
+    <Property Name="Minimo" Type="bigint" />
+    <Property Name="Localizacion" Type="varchar" MaxLength="45" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComponentesCodigosBarras">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="UnidadId" Type="bigint" Nullable="false" />
+    <Property Name="CodigoBarra" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComponentesEquivalenciasPartes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="MarcaId" Type="bigint" Nullable="false" />
+    <Property Name="NoParte" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Modelo" Type="varchar" MaxLength="30" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComponentesFormula">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="CostoTotal" Type="double" />
+    <Property Name="Estado" Type="enum" />
+    <Property Name="Rendimiento" Type="double" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComponentesFormulaDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="ComponenteFormulaId" Type="bigint" />
+    <Property Name="ComponenteHijoId" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="double" />
+    <Property Name="UnidadId" Type="bigint" Nullable="false" />
+    <Property Name="CostoUnitario" Type="double" />
+    <Property Name="CostoTotal" Type="double" />
+    <Property Name="Estado" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComponentesImagenes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="ImagenBase64" Type="text" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComponentesImpuestos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="ImpuestoId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComprasDocs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoDocumento" Type="enum" Nullable="false" />
+    <Property Name="SolicitanteId" Type="bigint" />
+    <Property Name="DepartamentoId" Type="bigint" />
+    <Property Name="AlmacenId" Type="bigint" />
+    <Property Name="FechaDocumento" Type="date" Nullable="false" />
+    <Property Name="Notas" Type="varchar" MaxLength="300" />
+    <Property Name="Estado" Type="enum" Nullable="false" />
+    <Property Name="ProveedorId" Type="bigint" />
+    <Property Name="Folio" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FolioProveedor" Type="varchar" MaxLength="15" />
+    <Property Name="MonedaId" Type="bigint" />
+    <Property Name="TipoCambio" Type="double" />
+    <Property Name="TipoDescuento" Type="enum" />
+    <Property Name="DescuentoPorcentaje" Type="double" />
+    <Property Name="DescuentoImporte" Type="double" />
+    <Property Name="FechaEntrega" Type="date" />
+    <Property Name="Subtotal" Type="double" />
+    <Property Name="Impuestos" Type="double" />
+    <Property Name="Retenciones" Type="double" />
+    <Property Name="Total" Type="double" />
+    <Property Name="ModuloOrigen" Type="enum" />
+    <Property Name="CondicionesPagoId" Type="bigint" />
+    <Property Name="FechaEnvio" Type="date" />
+    <Property Name="Enviado" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComprasDocsDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComprasDocsId" Type="bigint" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="CantidadCompra" Type="double" Nullable="false" />
+    <Property Name="CantidadPendiente" Type="double" />
+    <Property Name="UnidadCompraId" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="double" />
+    <Property Name="UnidadId" Type="bigint" />
+    <Property Name="GrupoUnidadesId" Type="bigint" />
+    <Property Name="PrecioUnitario" Type="double" />
+    <Property Name="DescuentoPorcentaje" Type="double" />
+    <Property Name="DescuentoImporte" Type="double" />
+    <Property Name="Importe" Type="double" />
+    <Property Name="Notas" Type="varchar" MaxLength="300" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComprasDocsImpuestos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComprasDocsId" Type="bigint" Nullable="false" />
+    <Property Name="ImpuestoId" Type="bigint" Nullable="false" />
+    <Property Name="SubtotalCompra" Type="double" Nullable="false" />
+    <Property Name="Otrosimpuestos" Type="double" />
+    <Property Name="Porcentaje" Type="double" Nullable="false" />
+    <Property Name="Importe" Type="double" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComprasDocsLotesSeries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComprasDocsDetalleId" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="double" Nullable="false" />
+    <Property Name="LotesSeriesId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComprasDocsRelaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComprasDocsOrigenId" Type="bigint" Nullable="false" />
+    <Property Name="ComprasDocsDestinoId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ComprasDocsRelacionesDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComprasDocsDetalleOrigenId" Type="bigint" Nullable="false" />
+    <Property Name="ComprasDocsDetalleDestinoId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ConceptosES">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Clave" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Predefinido" Type="enum" Nullable="false" />
+    <Property Name="Naturaleza" Type="enum" Nullable="false" />
+    <Property Name="FolioAutomatico" Type="enum" Nullable="false" />
+    <Property Name="TipoDocumentoId" Type="bigint" />
+    <Property Name="CostoAutomatico" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="CondicionesPago">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DescProntoPago" Type="double" />
+    <Property Name="DiasProntoPago" Type="int" />
+    <Property Name="Predeterminado" Type="enum" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'def.oco160101.CondicionesPagoPlazos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CondicionesPagoPlazos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CondicionesPagoId" Type="bigint" Nullable="false" />
+    <Property Name="Dias" Type="int" Nullable="false" />
+    <Property Name="Porcentaje" Type="double" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ConfiguracionMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FactorMontoCompra" Type="double" Nullable="false" />
+    <Property Name="FactorPuntos" Type="int" Nullable="false" />
+    <Property Name="AntiguedadTicket" Type="int" />
+    <Property Name="VigenciaCanje" Type="int" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="PaisId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ExistenciasLotesSeries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LotesSeriesId" Type="bigint" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="Existencia" Type="double" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Giros">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="GrupoProveedores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="GruposComponentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="TipoComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="GruposUnidades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="GruposUnidadesDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GrupoUnidadesId" Type="bigint" Nullable="false" />
+    <Property Name="CantidadEquivalente" Type="double" Nullable="false" />
+    <Property Name="UnidadEquivalenteId" Type="bigint" Nullable="false" />
+    <Property Name="CantidadBase" Type="double" Nullable="false" />
+    <Property Name="UnidadBaseId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Impuestos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Naturaleza" Type="enum" Nullable="false" />
+    <Property Name="Tipo" Type="enum" Nullable="false" />
+    <Property Name="TipoCalculo" Type="enum" Nullable="false" />
+    <Property Name="Porcentaje" Type="double" />
+    <Property Name="CuotaUnidad" Type="double" />
+    <Property Name="UnidadId" Type="bigint" />
+    <Property Name="Predeterminado" Type="enum" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ImpuestosGravados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImpuestoId" Type="bigint" Nullable="false" />
+    <Property Name="ImpuestoGravadoId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventariosCostos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Existencia" Type="double" Nullable="false" />
+    <Property Name="CostoTotal" Type="double" Nullable="false" />
+    <Property Name="Activo" Type="enum" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventariosES">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConceptoId" Type="bigint" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="Folio" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Descripcion" Type="text" />
+    <Property Name="Naturaleza" Type="enum" Nullable="false" />
+    <Property Name="CostoTotal" Type="double" Nullable="false" />
+    <Property Name="Cancelado" Type="enum" Nullable="false" />
+    <Property Name="SalidaTraspasoId" Type="bigint" />
+    <Property Name="FolioAutomatico" Type="enum" />
+    <Property Name="TipoDocumentoId" Type="bigint" />
+    <Property Name="SalidaTraspasoAplicada" Type="enum" />
+    <Property Name="AlmacenDestinoId" Type="bigint" />
+    <Property Name="ModuloOrigen" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventariosESDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventariosESId" Type="bigint" Nullable="false" />
+    <Property Name="ConceptoId" Type="bigint" Nullable="false" />
+    <Property Name="Naturaleza" Type="enum" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Cantidad" Type="double" Nullable="false" />
+    <Property Name="CostoUnitario" Type="double" Nullable="false" />
+    <Property Name="CostoTotal" Type="double" Nullable="false" />
+    <Property Name="MetodoCosteo" Type="enum" />
+    <Property Name="ComponentesAlmacenesId" Type="bigint" Nullable="false" />
+    <Property Name="TipoSeguimiento" Type="enum" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventariosESLotesSeries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventariosESDetalleId" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="double" Nullable="false" />
+    <Property Name="LotesSeriesId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventariosFisicos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Estado" Type="enum" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="InventariosESEntradaId" Type="bigint" />
+    <Property Name="InventariosESSalidaId" Type="bigint" />
+    <Property Name="FechaHoraCancelacion" Type="timestamp" Precision="0" />
+    <Property Name="FechaHoraAplicacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioCancelo" Type="varchar" MaxLength="30" />
+    <Property Name="UsuarioAplico" Type="varchar" MaxLength="30" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventariosFisicosDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventariosFisicosId" Type="bigint" Nullable="false" />
+    <Property Name="InventariosESDetalleId" Type="bigint" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="ExistenciaFisica" Type="double" Nullable="false" />
+    <Property Name="ExistenciaTeorica" Type="double" />
+    <Property Name="Diferencia" Type="double" />
+    <Property Name="ComponentesAlmacenesId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventariosFisicosLotesSeries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InventariosFisicosDetalleId" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="double" Nullable="false" />
+    <Property Name="LotesSeriesId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="InventariosSaldos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="Anio" Type="int" Nullable="false" />
+    <Property Name="Mes" Type="int" Nullable="false" />
+    <Property Name="UltimoDia" Type="int" Nullable="false" />
+    <Property Name="EntradasUnidades" Type="double" Nullable="false" />
+    <Property Name="SalidasUnidades" Type="double" Nullable="false" />
+    <Property Name="EntradasCosto" Type="double" Nullable="false" />
+    <Property Name="SalidasCosto" Type="double" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="LotesSeries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="Lote" Type="varchar" MaxLength="20" />
+    <Property Name="FechaCaducidad" Type="date" />
+    <Property Name="NumeroSerie" Type="varchar" MaxLength="45" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="MarcasComponentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ModulosRelaciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuloOrigen" Type="enum" Nullable="false" />
+    <Property Name="DocOrigenId" Type="bigint" Nullable="false" />
+    <Property Name="ModuloDestino" Type="enum" Nullable="false" />
+    <Property Name="DocsDestinoId" Type="bigint" Nullable="false" />
+    <Property Name="TipoDocumento" Type="enum" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Monedas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TextoImporteLetra" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Simbolo" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="CodigoISOMonedaId" Type="bigint" Nullable="false" />
+    <Property Name="MonedaLocal" Type="enum" Nullable="false" />
+    <Property Name="Predeterminado" Type="enum" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="MovimientosMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioMonederoId" Type="bigint" Nullable="false" />
+    <Property Name="FechaHora" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="Canje" Type="int" />
+    <Property Name="Abono" Type="int" />
+    <Property Name="FolioTicket" Type="varchar" MaxLength="20" />
+    <Property Name="MontoTicket" Type="double" />
+    <Property Name="SocioMonederoId" Type="bigint" />
+    <Property Name="CentroCanjeMonederoId" Type="bigint" />
+    <Property Name="TipoProducto" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="MovimientosMonederoDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MovimientoMonederoId" Type="bigint" Nullable="false" />
+    <Property Name="PremioId" Type="bigint" Nullable="false" />
+    <Property Name="Puntos" Type="int" Nullable="false" />
+    <Property Name="SolicitudesCanjeMonederoDetallesId" Type="bigint" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Municipios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="EstadoId" Type="bigint" Nullable="false" />
+    <Property Name="PaisId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="PremiosMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FechaInicia" Type="timestamp" Precision="0" />
+    <Property Name="FechaTermina" Type="timestamp" Precision="0" />
+    <Property Name="PuntosCanje" Type="int" Nullable="false" />
+    <Property Name="ImagenBase64" Type="text" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="PremiosMonederoDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PremioMonederoId" Type="bigint" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="double" Nullable="false" />
+    <Property Name="UnidadId" Type="bigint" Nullable="false" />
+    <Property Name="CantidadReal" Type="double" Nullable="false" />
+    <Property Name="UnidadRealId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NombreComercial" Type="varchar" MaxLength="100" />
+    <Property Name="RFC" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="GruposProveedoresId" Type="bigint" />
+    <Property Name="GiroId" Type="bigint" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Telefono1" Type="varchar" MaxLength="15" />
+    <Property Name="Telefono2" Type="varchar" MaxLength="15" />
+    <Property Name="Activo" Type="enum" Nullable="false" />
+    <Property Name="MonedaId" Type="bigint" />
+    <Property Name="CondicionesPagoId" Type="bigint" />
+    <Property Name="LimiteCredito" Type="double" />
+    <Property Name="Celular" Type="varchar" MaxLength="15" />
+    <Property Name="Notas" Type="text" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ProveedoresContactos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProveedorId" Type="bigint" Nullable="false" />
+    <Property Name="Identificador" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="NombreCompleto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Puesto" Type="varchar" MaxLength="45" />
+    <Property Name="Calle" Type="varchar" MaxLength="45" />
+    <Property Name="NoExterior" Type="varchar" MaxLength="10" />
+    <Property Name="NoInterior" Type="varchar" MaxLength="10" />
+    <Property Name="Referencia" Type="varchar" MaxLength="200" />
+    <Property Name="ColoniaId" Type="bigint" />
+    <Property Name="CodigoPostalId" Type="bigint" />
+    <Property Name="CiudadId" Type="bigint" />
+    <Property Name="MunicipioId" Type="bigint" />
+    <Property Name="EstadoId" Type="bigint" />
+    <Property Name="PaisId" Type="bigint" />
+    <Property Name="Telefono1" Type="varchar" MaxLength="15" />
+    <Property Name="Telefono2" Type="varchar" MaxLength="15" />
+    <Property Name="Celular" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ProveedoresDirecciones">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProveedorId" Type="bigint" Nullable="false" />
+    <Property Name="Calle" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="NoInterior" Type="varchar" MaxLength="10" />
+    <Property Name="NoExterior" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Referencia" Type="varchar" MaxLength="200" />
+    <Property Name="ColoniaId" Type="bigint" Nullable="false" />
+    <Property Name="CodigoPostalId" Type="bigint" Nullable="false" />
+    <Property Name="CiudadId" Type="bigint" Nullable="false" />
+    <Property Name="MunicipioId" Type="bigint" />
+    <Property Name="EstadoId" Type="bigint" Nullable="false" />
+    <Property Name="PaisId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Puestos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DepartamentoId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Resguardos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlmacenId" Type="bigint" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="TipoDocumento" Type="enum" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="300" />
+    <Property Name="ResponsableId" Type="bigint" />
+    <Property Name="InventariosESId" Type="bigint" />
+    <Property Name="Cancelado" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ResguardosDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ResguardoId" Type="bigint" Nullable="false" />
+    <Property Name="TipoDocumento" Type="enum" />
+    <Property Name="ResponsableId" Type="bigint" />
+    <Property Name="ComponenteId" Type="bigint" Nullable="false" />
+    <Property Name="Cantidad" Type="double" Nullable="false" />
+    <Property Name="ComponentesAlmacenesId" Type="bigint" Nullable="false" />
+    <Property Name="Notas" Type="varchar" MaxLength="300" />
+    <Property Name="AlmacenId" Type="bigint" />
+    <Property Name="Cancelado" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="ResguardosLotesSeries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ResguardosDetalleId" Type="bigint" Nullable="false" />
+    <Property Name="ComponenteId" Type="bigint" />
+    <Property Name="ResponsableId" Type="bigint" />
+    <Property Name="ResguardoLotesSeriesOrigenId" Type="bigint" />
+    <Property Name="TipoDocumento" Type="enum" />
+    <Property Name="LotesSeriesId" Type="bigint" />
+    <Property Name="EstadoDevolucion" Type="enum" />
+    <Property Name="Cancelado" Type="enum" />
+    <Property Name="ResguardoId" Type="bigint" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Responsables">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Paterno" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Materno" Type="varchar" MaxLength="100" />
+    <Property Name="CorreoElectronico" Type="varchar" MaxLength="50" />
+    <Property Name="PuestoId" Type="bigint" />
+    <Property Name="AreaId" Type="bigint" />
+    <Property Name="DepartamentoId" Type="bigint" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="SaldosMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioMonederoId" Type="bigint" Nullable="false" />
+    <Property Name="Saldo" Type="int" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="SociosMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Servidor" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="FactorMontoCompra" Type="double" />
+    <Property Name="FactorPuntos" Type="int" />
+    <Property Name="AntiguedadTicket" Type="int" />
+    <Property Name="GrupoSocio" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="SolicitudesCanjeMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UsuarioMonederoId" Type="bigint" Nullable="false" />
+    <Property Name="CodigoCanje" Type="varchar" MaxLength="100" />
+    <Property Name="FechaHora" Type="timestamp" Precision="0" Nullable="false" />
+    <Property Name="VigenciaAl" Type="timestamp" Precision="0" />
+    <Property Name="Estado" Type="enum" />
+    <Property Name="TotalPuntosCanje" Type="int" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="SolicitudesCanjeMonederoDetalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SolicitudCanjeMonederoId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioMonederoId" Type="bigint" Nullable="false" />
+    <Property Name="PremioId" Type="bigint" Nullable="false" />
+    <Property Name="PuntosCanje" Type="int" Nullable="false" />
+    <Property Name="VigenciaAl" Type="timestamp" Precision="0" />
+    <Property Name="Estado" Type="enum" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="SubgruposComponentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="GrupoComponentesId" Type="bigint" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="TiposCambio">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MonedaId" Type="bigint" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="TipoCambio" Type="double" Nullable="false" />
+    <Property Name="TipoCambioCobros" Type="double" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="TiposComponentes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Prefijo" Type="varchar" MaxLength="3" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="TiposDocumentos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Abreviatura" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="TokensMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Token" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="Unidades">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="Abreviatura" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <EntityType Name="UsuariosMonedero">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Contrasena" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="Calle" Type="varchar" MaxLength="45" />
+    <Property Name="NoExterior" Type="varchar" MaxLength="15" />
+    <Property Name="NoInterior" Type="varchar" MaxLength="15" />
+    <Property Name="ColoniaId" Type="bigint" />
+    <Property Name="CodigoPostalId" Type="bigint" />
+    <Property Name="CiudadId" Type="bigint" />
+    <Property Name="MunicipioId" Type="bigint" />
+    <Property Name="EstadoId" Type="bigint" />
+    <Property Name="PaisId" Type="bigint" />
+    <Property Name="Sexo" Type="enum" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="Activo" Type="enum" />
+    <Property Name="RegistroCompletado" Type="enum" />
+    <Property Name="UsuarioCreo" Type="varchar" MaxLength="30" />
+    <Property Name="FechaCreacion" Type="timestamp" Precision="0" />
+    <Property Name="UsuarioModifico" Type="varchar" MaxLength="30" />
+    <Property Name="FechaUltimaModificacion" Type="timestamp" Precision="0" />
+  </EntityType>
+  <Association Name="Ciudades_ibfk_1">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ciudades">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ciudades_ibfk_2">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ciudades">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ciudades_ibfk_3">
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ciudades">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CodigosPostales_ibfk_1">
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="1" />
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigosPostales">
+        <PropertyRef Name="CiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CodigosPostales_ibfk_2">
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigosPostales">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CodigosPostales_ibfk_3">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigosPostales">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CodigosPostales_ibfk_4">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CodigosPostales">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Colonias_ibfk_1">
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="1" />
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigosPostales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Colonias">
+        <PropertyRef Name="CodigoPostalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Colonias_ibfk_2">
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="1" />
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Colonias">
+        <PropertyRef Name="CiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Colonias_ibfk_3">
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="1" />
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Colonias">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Colonias_ibfk_4">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Colonias">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Colonias_ibfk_5">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Colonias">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Estados_ibfk_1">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="Estados" Type="Self.Estados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Estados">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Almacenes_Ciudades1">
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="0..1" />
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Almacenes">
+        <PropertyRef Name="CiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Almacenes_CodigosPostales1">
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="0..1" />
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigosPostales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Almacenes">
+        <PropertyRef Name="CodigoPostalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Almacenes_Colonias1">
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="0..1" />
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colonias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Almacenes">
+        <PropertyRef Name="ColoniaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Almacenes_Estados1">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="0..1" />
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Almacenes">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Almacenes_Municipios1">
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="0..1" />
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Almacenes">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Almacenes_Paises1">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Almacenes">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Almacenes_TiposComponentes1">
+    <End Role="TiposComponentes" Type="Self.TiposComponentes" Multiplicity="1" />
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TiposComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Almacenes">
+        <PropertyRef Name="TipoComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AlmacenesGruposComponentes_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AlmacenesGruposComponentes" Type="Self.AlmacenesGruposComponentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlmacenesGruposComponentes">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AlmacenesGruposComponentes_GruposComponentes1">
+    <End Role="GruposComponentes" Type="Self.GruposComponentes" Multiplicity="1" />
+    <End Role="AlmacenesGruposComponentes" Type="Self.AlmacenesGruposComponentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlmacenesGruposComponentes">
+        <PropertyRef Name="GrupoComponentesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CentrosCanjeMonedero_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="CentrosCanjeMonedero" Type="Self.CentrosCanjeMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CentrosCanjeMonedero">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CentrosCanjeUsuarioMonedero_CentrosCanjeMonedero1">
+    <End Role="CentrosCanjeMonedero" Type="Self.CentrosCanjeMonedero" Multiplicity="1" />
+    <End Role="CentrosCanjeUsuariosMonedero" Type="Self.CentrosCanjeUsuariosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CentrosCanjeMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CentrosCanjeUsuariosMonedero">
+        <PropertyRef Name="CentroCanjeMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Componentes_GruposComponentes1">
+    <End Role="GruposComponentes" Type="Self.GruposComponentes" Multiplicity="1" />
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Componentes">
+        <PropertyRef Name="GrupoComponentesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Componentes_GruposUnidades1">
+    <End Role="GruposUnidades" Type="Self.GruposUnidades" Multiplicity="0..1" />
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposUnidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Componentes">
+        <PropertyRef Name="GrupoUnidadesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Componentes_Marcas_Componentes1">
+    <End Role="MarcasComponentes" Type="Self.MarcasComponentes" Multiplicity="0..1" />
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcasComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Componentes">
+        <PropertyRef Name="MarcaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Componentes_SubgruposComponentes1">
+    <End Role="SubgruposComponentes" Type="Self.SubgruposComponentes" Multiplicity="1" />
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubgruposComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Componentes">
+        <PropertyRef Name="SubgrupoComponentesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Componentes_TiposComponentes1">
+    <End Role="TiposComponentes" Type="Self.TiposComponentes" Multiplicity="1" />
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TiposComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Componentes">
+        <PropertyRef Name="TipoComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Componentes_Unidades1">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="0..1" />
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Componentes">
+        <PropertyRef Name="UnidadInventarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Componentes_Unidades2">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="0..1" />
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Componentes">
+        <PropertyRef Name="UnidadVentaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Componentes_Unidades3">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="0..1" />
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Componentes">
+        <PropertyRef Name="UnidadCompraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesAlmacenes_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="ComponentesAlmacenes" Type="Self.ComponentesAlmacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesAlmacenes">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesAlmacenes_AlmacenesGruposComponentes1">
+    <End Role="AlmacenesGruposComponentes" Type="Self.AlmacenesGruposComponentes" Multiplicity="0..1" />
+    <End Role="ComponentesAlmacenes" Type="Self.ComponentesAlmacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AlmacenesGruposComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesAlmacenes">
+        <PropertyRef Name="AlmacenesGruposComponentesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesAlmacenes_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComponentesAlmacenes" Type="Self.ComponentesAlmacenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesAlmacenes">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesAlmacenes_Componentes10">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComponentesFormulaDetalles" Type="Self.ComponentesFormulaDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesFormulaDetalles">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesAlmacenes_Componentes100">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComponentesFormula" Type="Self.ComponentesFormula" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesFormula">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesCodigosBarra_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComponentesCodigosBarras" Type="Self.ComponentesCodigosBarras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesCodigosBarras">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesCodigosBarra_Componentes10">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComponentesImagenes" Type="Self.ComponentesImagenes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesImagenes">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesCodigosBarra_Unidades1">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+    <End Role="ComponentesCodigosBarras" Type="Self.ComponentesCodigosBarras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesCodigosBarras">
+        <PropertyRef Name="UnidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesEquivalenciasPartes_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="ComponentesEquivalenciasPartes" Type="Self.ComponentesEquivalenciasPartes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesEquivalenciasPartes">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesEquivalenciasPartes_MarcasComponentes1">
+    <End Role="MarcasComponentes" Type="Self.MarcasComponentes" Multiplicity="1" />
+    <End Role="ComponentesEquivalenciasPartes" Type="Self.ComponentesEquivalenciasPartes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarcasComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesEquivalenciasPartes">
+        <PropertyRef Name="MarcaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesFormula_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="ComponentesFormulaDetalles" Type="Self.ComponentesFormulaDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesFormulaDetalles">
+        <PropertyRef Name="ComponenteHijoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesFormula_Unidades1">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+    <End Role="ComponentesFormulaDetalles" Type="Self.ComponentesFormulaDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesFormulaDetalles">
+        <PropertyRef Name="UnidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesFormulaDetalles_ComponentesFormula1">
+    <End Role="ComponentesFormula" Type="Self.ComponentesFormula" Multiplicity="0..1" />
+    <End Role="ComponentesFormulaDetalles" Type="Self.ComponentesFormulaDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComponentesFormula">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesFormulaDetalles">
+        <PropertyRef Name="ComponenteFormulaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesImpuestos_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ComponentesImpuestos" Type="Self.ComponentesImpuestos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesImpuestos">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComponentesImpuestos_Impuestos1">
+    <End Role="Impuestos" Type="Self.Impuestos" Multiplicity="1" />
+    <End Role="ComponentesImpuestos" Type="Self.ComponentesImpuestos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Impuestos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComponentesImpuestos">
+        <PropertyRef Name="ImpuestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocs_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="0..1" />
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocs">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocs_CondicionesPago1">
+    <End Role="CondicionesPago" Type="Self.CondicionesPago" Multiplicity="0..1" />
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CondicionesPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocs">
+        <PropertyRef Name="CondicionesPagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocs_Departamentos1">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1" />
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocs">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocs_Monedas1">
+    <End Role="Monedas" Type="Self.Monedas" Multiplicity="0..1" />
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monedas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocs">
+        <PropertyRef Name="MonedaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocs_Proveedores1">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocs">
+        <PropertyRef Name="ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocs_Responsables1">
+    <End Role="Responsables" Type="Self.Responsables" Multiplicity="0..1" />
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responsables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocs">
+        <PropertyRef Name="SolicitanteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsDetalles_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="ComprasDocsDetalles" Type="Self.ComprasDocsDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsDetalles">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsDetalles_ComprasDocs1">
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="1" />
+    <End Role="ComprasDocsDetalles" Type="Self.ComprasDocsDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComprasDocs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsDetalles">
+        <PropertyRef Name="ComprasDocsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsDetalles_ComprasDocs10">
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="1" />
+    <End Role="ComprasDocsImpuestos" Type="Self.ComprasDocsImpuestos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComprasDocs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsImpuestos">
+        <PropertyRef Name="ComprasDocsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsDetalles_ComprasDocs100">
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="1" />
+    <End Role="ComprasDocsRelaciones" Type="Self.ComprasDocsRelaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComprasDocs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsRelaciones">
+        <PropertyRef Name="ComprasDocsOrigenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsDetalles_ComprasDocs1000">
+    <End Role="ComprasDocsDetalles" Type="Self.ComprasDocsDetalles" Multiplicity="1" />
+    <End Role="ComprasDocsRelacionesDetalles" Type="Self.ComprasDocsRelacionesDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComprasDocsDetalles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsRelacionesDetalles">
+        <PropertyRef Name="ComprasDocsDetalleOrigenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsDetalles_GruposUnidades1">
+    <End Role="GruposUnidades" Type="Self.GruposUnidades" Multiplicity="0..1" />
+    <End Role="ComprasDocsDetalles" Type="Self.ComprasDocsDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposUnidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsDetalles">
+        <PropertyRef Name="GrupoUnidadesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsDetalles_Unidades1">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="0..1" />
+    <End Role="ComprasDocsDetalles" Type="Self.ComprasDocsDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsDetalles">
+        <PropertyRef Name="UnidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsDetalles_Unidades2">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+    <End Role="ComprasDocsDetalles" Type="Self.ComprasDocsDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsDetalles">
+        <PropertyRef Name="UnidadCompraId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsImpuestos_Impuestos1">
+    <End Role="Impuestos" Type="Self.Impuestos" Multiplicity="1" />
+    <End Role="ComprasDocsImpuestos" Type="Self.ComprasDocsImpuestos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Impuestos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsImpuestos">
+        <PropertyRef Name="ImpuestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsLotesSeries_ComprasDocsDetalles1">
+    <End Role="ComprasDocsDetalles" Type="Self.ComprasDocsDetalles" Multiplicity="1" />
+    <End Role="ComprasDocsLotesSeries" Type="Self.ComprasDocsLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComprasDocsDetalles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsLotesSeries">
+        <PropertyRef Name="ComprasDocsDetalleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsLotesSeries_LotesSeries1">
+    <End Role="LotesSeries" Type="Self.LotesSeries" Multiplicity="1" />
+    <End Role="ComprasDocsLotesSeries" Type="Self.ComprasDocsLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LotesSeries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsLotesSeries">
+        <PropertyRef Name="LotesSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsRelaciones_ComprasDocs1">
+    <End Role="ComprasDocs" Type="Self.ComprasDocs" Multiplicity="1" />
+    <End Role="ComprasDocsRelaciones" Type="Self.ComprasDocsRelaciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComprasDocs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsRelaciones">
+        <PropertyRef Name="ComprasDocsDestinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ComprasDocsRelacionesDetalles_ComprasDocs1">
+    <End Role="ComprasDocsDetalles" Type="Self.ComprasDocsDetalles" Multiplicity="1" />
+    <End Role="ComprasDocsRelacionesDetalles" Type="Self.ComprasDocsRelacionesDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComprasDocsDetalles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ComprasDocsRelacionesDetalles">
+        <PropertyRef Name="ComprasDocsDetalleDestinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ConceptosES_TiposDocumentos1">
+    <End Role="TiposDocumentos" Type="Self.TiposDocumentos" Multiplicity="0..1" />
+    <End Role="ConceptosES" Type="Self.ConceptosES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TiposDocumentos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ConceptosES">
+        <PropertyRef Name="TipoDocumentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DireccionesProveedores_Proveedores1">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProveedoresDirecciones" Type="Self.ProveedoresDirecciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresDirecciones">
+        <PropertyRef Name="ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DireccionesProveedores_Proveedores10">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ProveedoresContactos" Type="Self.ProveedoresContactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresContactos">
+        <PropertyRef Name="ProveedorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventarios_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="InventariosES" Type="Self.InventariosES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosES">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventarios_ConceptosES1">
+    <End Role="ConceptosES" Type="Self.ConceptosES" Multiplicity="1" />
+    <End Role="InventariosES" Type="Self.InventariosES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConceptosES">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosES">
+        <PropertyRef Name="ConceptoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventariosDetalles_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="InventariosESDetalles" Type="Self.InventariosESDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosESDetalles">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventariosDetalles_AlmacenesGruposComponentes1">
+    <End Role="ComponentesAlmacenes" Type="Self.ComponentesAlmacenes" Multiplicity="1" />
+    <End Role="InventariosESDetalles" Type="Self.InventariosESDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComponentesAlmacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosESDetalles">
+        <PropertyRef Name="ComponentesAlmacenesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventariosDetalles_AlmacenesGruposComponentes10">
+    <End Role="ComponentesAlmacenes" Type="Self.ComponentesAlmacenes" Multiplicity="1" />
+    <End Role="InventariosFisicosDetalles" Type="Self.InventariosFisicosDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComponentesAlmacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicosDetalles">
+        <PropertyRef Name="ComponentesAlmacenesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventariosDetalles_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="InventariosESDetalles" Type="Self.InventariosESDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosESDetalles">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventariosDetalles_Componentes10">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="InventariosFisicosDetalles" Type="Self.InventariosFisicosDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicosDetalles">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventariosDetalles_Componentes1001">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="LotesSeries" Type="Self.LotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LotesSeries">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventariosDetalles_ConceptosES1">
+    <End Role="ConceptosES" Type="Self.ConceptosES" Multiplicity="1" />
+    <End Role="InventariosESDetalles" Type="Self.InventariosESDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConceptosES">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosESDetalles">
+        <PropertyRef Name="ConceptoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ESInventariosDetalles_ESInventarios1">
+    <End Role="InventariosES" Type="Self.InventariosES" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InventariosESDetalles" Type="Self.InventariosESDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventariosES">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosESDetalles">
+        <PropertyRef Name="InventariosESId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ExistenciasLotesSeries_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="ExistenciasLotesSeries" Type="Self.ExistenciasLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExistenciasLotesSeries">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ExistenciasLotesSeries_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="ExistenciasLotesSeries" Type="Self.ExistenciasLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExistenciasLotesSeries">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GruposComponentes_TiposComponentes1">
+    <End Role="TiposComponentes" Type="Self.TiposComponentes" Multiplicity="1" />
+    <End Role="GruposComponentes" Type="Self.GruposComponentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TiposComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GruposComponentes">
+        <PropertyRef Name="TipoComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GruposUnidadesDetalle_GruposUnidades1">
+    <End Role="GruposUnidades" Type="Self.GruposUnidades" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GruposUnidadesDetalle" Type="Self.GruposUnidadesDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposUnidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GruposUnidadesDetalle">
+        <PropertyRef Name="GrupoUnidadesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GruposUnidadesDetalle_Unidades1">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+    <End Role="GruposUnidadesDetalle" Type="Self.GruposUnidadesDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GruposUnidadesDetalle">
+        <PropertyRef Name="UnidadEquivalenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_GruposUnidadesDetalle_Unidades2">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+    <End Role="GruposUnidadesDetalle" Type="Self.GruposUnidadesDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GruposUnidadesDetalle">
+        <PropertyRef Name="UnidadBaseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Impuestos_Unidades1">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="0..1" />
+    <End Role="Impuestos" Type="Self.Impuestos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Impuestos">
+        <PropertyRef Name="UnidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ImpuestosGravados_Impuestos1">
+    <End Role="Impuestos" Type="Self.Impuestos" Multiplicity="1" />
+    <End Role="ImpuestosGravados" Type="Self.ImpuestosGravados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Impuestos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImpuestosGravados">
+        <PropertyRef Name="ImpuestoGravadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ImpuestosGravados_Impuestos2">
+    <End Role="Impuestos" Type="Self.Impuestos" Multiplicity="1" />
+    <End Role="ImpuestosGravados" Type="Self.ImpuestosGravados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Impuestos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ImpuestosGravados">
+        <PropertyRef Name="ImpuestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosES_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="0..1" />
+    <End Role="InventariosES" Type="Self.InventariosES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosES">
+        <PropertyRef Name="AlmacenDestinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosES_TiposDocumentos1">
+    <End Role="TiposDocumentos" Type="Self.TiposDocumentos" Multiplicity="0..1" />
+    <End Role="InventariosES" Type="Self.InventariosES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TiposDocumentos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosES">
+        <PropertyRef Name="TipoDocumentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosESLotesSeries_InventariosESDetalles1">
+    <End Role="InventariosESDetalles" Type="Self.InventariosESDetalles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InventariosESLotesSeries" Type="Self.InventariosESLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventariosESDetalles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosESLotesSeries">
+        <PropertyRef Name="InventariosESDetalleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosESLotesSeries_LotesSeries1">
+    <End Role="LotesSeries" Type="Self.LotesSeries" Multiplicity="1" />
+    <End Role="InventariosESLotesSeries" Type="Self.InventariosESLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LotesSeries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosESLotesSeries">
+        <PropertyRef Name="LotesSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosFisicos_InventariosES1">
+    <End Role="InventariosES" Type="Self.InventariosES" Multiplicity="0..1" />
+    <End Role="InventariosFisicos" Type="Self.InventariosFisicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventariosES">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicos">
+        <PropertyRef Name="InventariosESEntradaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosFisicos_InventariosES2">
+    <End Role="InventariosES" Type="Self.InventariosES" Multiplicity="0..1" />
+    <End Role="InventariosFisicos" Type="Self.InventariosFisicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventariosES">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicos">
+        <PropertyRef Name="InventariosESSalidaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosFisicosDetalles_InventariosESDetalles1">
+    <End Role="InventariosESDetalles" Type="Self.InventariosESDetalles" Multiplicity="0..1" />
+    <End Role="InventariosFisicosDetalles" Type="Self.InventariosFisicosDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventariosESDetalles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicosDetalles">
+        <PropertyRef Name="InventariosESDetalleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosFisicosDetalles_InventariosFisicos1">
+    <End Role="InventariosFisicos" Type="Self.InventariosFisicos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InventariosFisicosDetalles" Type="Self.InventariosFisicosDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventariosFisicos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicosDetalles">
+        <PropertyRef Name="InventariosFisicosId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosFisicosLotesSeries_InventariosFisicosDetalles1">
+    <End Role="InventariosFisicosDetalles" Type="Self.InventariosFisicosDetalles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InventariosFisicosLotesSeries" Type="Self.InventariosFisicosLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InventariosFisicosDetalles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicosLotesSeries">
+        <PropertyRef Name="InventariosFisicosDetalleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosFisicosLotesSeries_LotesSeries1">
+    <End Role="LotesSeries" Type="Self.LotesSeries" Multiplicity="1" />
+    <End Role="InventariosFisicosLotesSeries" Type="Self.InventariosFisicosLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LotesSeries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicosLotesSeries">
+        <PropertyRef Name="LotesSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosFisicosLotesSeries_LotesSeries10">
+    <End Role="LotesSeries" Type="Self.LotesSeries" Multiplicity="1" />
+    <End Role="ExistenciasLotesSeries" Type="Self.ExistenciasLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LotesSeries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ExistenciasLotesSeries">
+        <PropertyRef Name="LotesSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosSaldos_Almacenes1">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="InventariosSaldos" Type="Self.InventariosSaldos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosSaldos">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosSaldos_Almacenes10">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="InventariosCostos" Type="Self.InventariosCostos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosCostos">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosSaldos_Almacenes100">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="InventariosFisicos" Type="Self.InventariosFisicos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosFisicos">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosSaldos_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="InventariosSaldos" Type="Self.InventariosSaldos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosSaldos">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_InventariosSaldos_Componentes10">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="InventariosCostos" Type="Self.InventariosCostos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InventariosCostos">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Monedas_CodigosISOMonedas1">
+    <End Role="CodigosISOMonedas" Type="Self.CodigosISOMonedas" Multiplicity="1" />
+    <End Role="Monedas" Type="Self.Monedas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigosISOMonedas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Monedas">
+        <PropertyRef Name="CodigoISOMonedaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonedero_CentrosCanjeMonedero1">
+    <End Role="CentrosCanjeMonedero" Type="Self.CentrosCanjeMonedero" Multiplicity="0..1" />
+    <End Role="MovimientosMonedero" Type="Self.MovimientosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CentrosCanjeMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovimientosMonedero">
+        <PropertyRef Name="CentroCanjeMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonedero_PremiosMonedero10">
+    <End Role="PremiosMonedero" Type="Self.PremiosMonedero" Multiplicity="1" />
+    <End Role="SolicitudesCanjeMonederoDetalles" Type="Self.SolicitudesCanjeMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PremiosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SolicitudesCanjeMonederoDetalles">
+        <PropertyRef Name="PremioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonedero_SociosMonedero1">
+    <End Role="SociosMonedero" Type="Self.SociosMonedero" Multiplicity="0..1" />
+    <End Role="MovimientosMonedero" Type="Self.MovimientosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SociosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovimientosMonedero">
+        <PropertyRef Name="SocioMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonedero_UsuariosMonedero1">
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="1" />
+    <End Role="MovimientosMonedero" Type="Self.MovimientosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuariosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovimientosMonedero">
+        <PropertyRef Name="UsuarioMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonedero_UsuariosMonedero10">
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="1" />
+    <End Role="SolicitudesCanjeMonederoDetalles" Type="Self.SolicitudesCanjeMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuariosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SolicitudesCanjeMonederoDetalles">
+        <PropertyRef Name="UsuarioMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonedero_UsuariosMonedero100">
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="1" />
+    <End Role="SolicitudesCanjeMonedero" Type="Self.SolicitudesCanjeMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuariosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SolicitudesCanjeMonedero">
+        <PropertyRef Name="UsuarioMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonederoDetalles_MovimientosMonedero1">
+    <End Role="MovimientosMonedero" Type="Self.MovimientosMonedero" Multiplicity="1" />
+    <End Role="MovimientosMonederoDetalles" Type="Self.MovimientosMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MovimientosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovimientosMonederoDetalles">
+        <PropertyRef Name="MovimientoMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonederoDetalles_PremiosMonedero1">
+    <End Role="PremiosMonedero" Type="Self.PremiosMonedero" Multiplicity="1" />
+    <End Role="MovimientosMonederoDetalles" Type="Self.MovimientosMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PremiosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovimientosMonederoDetalles">
+        <PropertyRef Name="PremioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_MovimientosMonederoDetalles_SolicitudesCanjeMonederoDetall1">
+    <End Role="SolicitudesCanjeMonederoDetalles" Type="Self.SolicitudesCanjeMonederoDetalles" Multiplicity="0..1" />
+    <End Role="MovimientosMonederoDetalles" Type="Self.MovimientosMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SolicitudesCanjeMonederoDetalles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MovimientosMonederoDetalles">
+        <PropertyRef Name="SolicitudesCanjeMonederoDetallesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PremiosMonederoDetalles_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="PremiosMonederoDetalles" Type="Self.PremiosMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PremiosMonederoDetalles">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PremiosMonederoDetalles_PremiosMonedero1">
+    <End Role="PremiosMonedero" Type="Self.PremiosMonedero" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PremiosMonederoDetalles" Type="Self.PremiosMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PremiosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PremiosMonederoDetalles">
+        <PropertyRef Name="PremioMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PremiosMonederoDetalles_Unidades1">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+    <End Role="PremiosMonederoDetalles" Type="Self.PremiosMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PremiosMonederoDetalles">
+        <PropertyRef Name="UnidadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_PremiosMonederoDetalles_Unidades2">
+    <End Role="Unidades" Type="Self.Unidades" Multiplicity="1" />
+    <End Role="PremiosMonederoDetalles" Type="Self.PremiosMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unidades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PremiosMonederoDetalles">
+        <PropertyRef Name="UnidadRealId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Proveedores_CondicionesPago1">
+    <End Role="CondicionesPago" Type="Self.CondicionesPago" Multiplicity="0..1" />
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CondicionesPago">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Proveedores">
+        <PropertyRef Name="CondicionesPagoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Proveedores_Giros1">
+    <End Role="Giros" Type="Self.Giros" Multiplicity="0..1" />
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Giros">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Proveedores">
+        <PropertyRef Name="GiroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Proveedores_GrupoProveedores1">
+    <End Role="GrupoProveedores" Type="Self.GrupoProveedores" Multiplicity="0..1" />
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoProveedores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Proveedores">
+        <PropertyRef Name="GruposProveedoresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Proveedores_Monedas1">
+    <End Role="Monedas" Type="Self.Monedas" Multiplicity="0..1" />
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monedas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Proveedores">
+        <PropertyRef Name="MonedaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresContactos_Ciudades1">
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="0..1" />
+    <End Role="ProveedoresContactos" Type="Self.ProveedoresContactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresContactos">
+        <PropertyRef Name="CiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresContactos_CodigosPostales1">
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="0..1" />
+    <End Role="ProveedoresContactos" Type="Self.ProveedoresContactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigosPostales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresContactos">
+        <PropertyRef Name="CodigoPostalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresContactos_Colonias1">
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="0..1" />
+    <End Role="ProveedoresContactos" Type="Self.ProveedoresContactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colonias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresContactos">
+        <PropertyRef Name="ColoniaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresContactos_Estados1">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="0..1" />
+    <End Role="ProveedoresContactos" Type="Self.ProveedoresContactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresContactos">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresContactos_Municipios1">
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="0..1" />
+    <End Role="ProveedoresContactos" Type="Self.ProveedoresContactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresContactos">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresContactos_Paises1">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
+    <End Role="ProveedoresContactos" Type="Self.ProveedoresContactos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresContactos">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresDirecciones_Ciudades1">
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="1" />
+    <End Role="ProveedoresDirecciones" Type="Self.ProveedoresDirecciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresDirecciones">
+        <PropertyRef Name="CiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresDirecciones_CodigosPostales1">
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="1" />
+    <End Role="ProveedoresDirecciones" Type="Self.ProveedoresDirecciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigosPostales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresDirecciones">
+        <PropertyRef Name="CodigoPostalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresDirecciones_Colonias1">
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="1" />
+    <End Role="ProveedoresDirecciones" Type="Self.ProveedoresDirecciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colonias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresDirecciones">
+        <PropertyRef Name="ColoniaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresDirecciones_Estados1">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="ProveedoresDirecciones" Type="Self.ProveedoresDirecciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresDirecciones">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresDirecciones_Municipios1">
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="0..1" />
+    <End Role="ProveedoresDirecciones" Type="Self.ProveedoresDirecciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresDirecciones">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ProveedoresDirecciones_Paises1">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="ProveedoresDirecciones" Type="Self.ProveedoresDirecciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProveedoresDirecciones">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Puestos_Departamentos1">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+    <End Role="Puestos" Type="Self.Puestos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Puestos">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Resguardos_Almacenes">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="1" />
+    <End Role="Resguardos" Type="Self.Resguardos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Resguardos">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Resguardos_LotesSeries">
+    <End Role="LotesSeries" Type="Self.LotesSeries" Multiplicity="0..1" />
+    <End Role="ResguardosLotesSeries" Type="Self.ResguardosLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LotesSeries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosLotesSeries">
+        <PropertyRef Name="LotesSeriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Resguardos_Responsables">
+    <End Role="Responsables" Type="Self.Responsables" Multiplicity="0..1" />
+    <End Role="Resguardos" Type="Self.Resguardos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responsables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Resguardos">
+        <PropertyRef Name="ResponsableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResguardosDetalles_Almacenes">
+    <End Role="Almacenes" Type="Self.Almacenes" Multiplicity="0..1" />
+    <End Role="ResguardosDetalles" Type="Self.ResguardosDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Almacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosDetalles">
+        <PropertyRef Name="AlmacenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResguardosDetalles_Componentes">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="1" />
+    <End Role="ResguardosDetalles" Type="Self.ResguardosDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosDetalles">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResguardosDetalles_ComponentesAlmacenes">
+    <End Role="ComponentesAlmacenes" Type="Self.ComponentesAlmacenes" Multiplicity="1" />
+    <End Role="ResguardosDetalles" Type="Self.ResguardosDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ComponentesAlmacenes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosDetalles">
+        <PropertyRef Name="ComponentesAlmacenesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResguardosDetalles_Resguardos">
+    <End Role="Resguardos" Type="Self.Resguardos" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ResguardosDetalles" Type="Self.ResguardosDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resguardos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosDetalles">
+        <PropertyRef Name="ResguardoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResguardosLotesSeries_Componentes1">
+    <End Role="Componentes" Type="Self.Componentes" Multiplicity="0..1" />
+    <End Role="ResguardosLotesSeries" Type="Self.ResguardosLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Componentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosLotesSeries">
+        <PropertyRef Name="ComponenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResguardosLotesSeries_Resguardos1">
+    <End Role="Resguardos" Type="Self.Resguardos" Multiplicity="0..1" />
+    <End Role="ResguardosLotesSeries" Type="Self.ResguardosLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Resguardos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosLotesSeries">
+        <PropertyRef Name="ResguardoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResguardosLotesSeries_ResguardosDetalles">
+    <End Role="ResguardosDetalles" Type="Self.ResguardosDetalles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ResguardosLotesSeries" Type="Self.ResguardosLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResguardosDetalles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosLotesSeries">
+        <PropertyRef Name="ResguardosDetalleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ResguardosLotesSeries_Responsables1">
+    <End Role="Responsables" Type="Self.Responsables" Multiplicity="0..1" />
+    <End Role="ResguardosLotesSeries" Type="Self.ResguardosLotesSeries" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Responsables">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ResguardosLotesSeries">
+        <PropertyRef Name="ResponsableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Responsables_Areas1">
+    <End Role="Areas" Type="Self.Areas" Multiplicity="0..1" />
+    <End Role="Responsables" Type="Self.Responsables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Areas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Responsables">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Responsables_Departamentos1">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1" />
+    <End Role="Responsables" Type="Self.Responsables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Responsables">
+        <PropertyRef Name="DepartamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Responsables_Puestos1">
+    <End Role="Puestos" Type="Self.Puestos" Multiplicity="0..1" />
+    <End Role="Responsables" Type="Self.Responsables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Puestos">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Responsables">
+        <PropertyRef Name="PuestoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SaldosMonedero_UsuariosMonedero1">
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="1" />
+    <End Role="SaldosMonedero" Type="Self.SaldosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuariosMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaldosMonedero">
+        <PropertyRef Name="UsuarioMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SolicitudesCanjeMonederoDetalles_SolicitudesCanjeMonedero1">
+    <End Role="SolicitudesCanjeMonedero" Type="Self.SolicitudesCanjeMonedero" Multiplicity="1" />
+    <End Role="SolicitudesCanjeMonederoDetalles" Type="Self.SolicitudesCanjeMonederoDetalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SolicitudesCanjeMonedero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SolicitudesCanjeMonederoDetalles">
+        <PropertyRef Name="SolicitudCanjeMonederoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_SubgruposComponentes_GruposComponentes1">
+    <End Role="GruposComponentes" Type="Self.GruposComponentes" Multiplicity="1" />
+    <End Role="SubgruposComponentes" Type="Self.SubgruposComponentes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GruposComponentes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SubgruposComponentes">
+        <PropertyRef Name="GrupoComponentesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UsuariosMonedero_Ciudades1">
+    <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="0..1" />
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ciudades">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuariosMonedero">
+        <PropertyRef Name="CiudadId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UsuariosMonedero_CodigosPostales1">
+    <End Role="CodigosPostales" Type="Self.CodigosPostales" Multiplicity="0..1" />
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CodigosPostales">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuariosMonedero">
+        <PropertyRef Name="CodigoPostalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UsuariosMonedero_Colonias1">
+    <End Role="Colonias" Type="Self.Colonias" Multiplicity="0..1" />
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Colonias">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuariosMonedero">
+        <PropertyRef Name="ColoniaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UsuariosMonedero_Estados1">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="0..1" />
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuariosMonedero">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UsuariosMonedero_Municipios1">
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="0..1" />
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Municipios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuariosMonedero">
+        <PropertyRef Name="MunicipioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_UsuariosMonedero_Paises1">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
+    <End Role="UsuariosMonedero" Type="Self.UsuariosMonedero" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UsuariosMonedero">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Municipios_ibfk_1">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Municipios">
+        <PropertyRef Name="PaisId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Municipios_ibfk_2">
+    <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+    <End Role="Municipios" Type="Self.Municipios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estados">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Municipios">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EmpresaModelStoreContainer">
+    <EntitySet Name="Almacenes" EntityType="Self.Almacenes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="AlmacenesGruposComponentes" EntityType="Self.AlmacenesGruposComponentes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Areas" EntityType="Self.Areas" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="CentrosCanjeMonedero" EntityType="Self.CentrosCanjeMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="CentrosCanjeUsuariosMonedero" EntityType="Self.CentrosCanjeUsuariosMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Ciudades" EntityType="Self.Ciudades" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="CodigosISOMonedas" EntityType="Self.CodigosISOMonedas" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="CodigosPostales" EntityType="Self.CodigosPostales" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Colonias" EntityType="Self.Colonias" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Componentes" EntityType="Self.Componentes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComponentesAlmacenes" EntityType="Self.ComponentesAlmacenes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComponentesCodigosBarras" EntityType="Self.ComponentesCodigosBarras" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComponentesEquivalenciasPartes" EntityType="Self.ComponentesEquivalenciasPartes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComponentesFormula" EntityType="Self.ComponentesFormula" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComponentesFormulaDetalles" EntityType="Self.ComponentesFormulaDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComponentesImagenes" EntityType="Self.ComponentesImagenes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComponentesImpuestos" EntityType="Self.ComponentesImpuestos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComprasDocs" EntityType="Self.ComprasDocs" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComprasDocsDetalles" EntityType="Self.ComprasDocsDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComprasDocsImpuestos" EntityType="Self.ComprasDocsImpuestos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComprasDocsLotesSeries" EntityType="Self.ComprasDocsLotesSeries" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComprasDocsRelaciones" EntityType="Self.ComprasDocsRelaciones" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ComprasDocsRelacionesDetalles" EntityType="Self.ComprasDocsRelacionesDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ConceptosES" EntityType="Self.ConceptosES" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="CondicionesPago" EntityType="Self.CondicionesPago" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ConfiguracionMonedero" EntityType="Self.ConfiguracionMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Estados" EntityType="Self.Estados" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ExistenciasLotesSeries" EntityType="Self.ExistenciasLotesSeries" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Giros" EntityType="Self.Giros" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="GrupoProveedores" EntityType="Self.GrupoProveedores" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="GruposComponentes" EntityType="Self.GruposComponentes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="GruposUnidades" EntityType="Self.GruposUnidades" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="GruposUnidadesDetalle" EntityType="Self.GruposUnidadesDetalle" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Impuestos" EntityType="Self.Impuestos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ImpuestosGravados" EntityType="Self.ImpuestosGravados" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="InventariosCostos" EntityType="Self.InventariosCostos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="InventariosES" EntityType="Self.InventariosES" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="InventariosESDetalles" EntityType="Self.InventariosESDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="InventariosESLotesSeries" EntityType="Self.InventariosESLotesSeries" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="InventariosFisicos" EntityType="Self.InventariosFisicos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="InventariosFisicosDetalles" EntityType="Self.InventariosFisicosDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="InventariosFisicosLotesSeries" EntityType="Self.InventariosFisicosLotesSeries" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="InventariosSaldos" EntityType="Self.InventariosSaldos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="LotesSeries" EntityType="Self.LotesSeries" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="MarcasComponentes" EntityType="Self.MarcasComponentes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ModulosRelaciones" EntityType="Self.ModulosRelaciones" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Monedas" EntityType="Self.Monedas" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="MovimientosMonedero" EntityType="Self.MovimientosMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="MovimientosMonederoDetalles" EntityType="Self.MovimientosMonederoDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Municipios" EntityType="Self.Municipios" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Paises" EntityType="Self.Paises" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="PremiosMonedero" EntityType="Self.PremiosMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="PremiosMonederoDetalles" EntityType="Self.PremiosMonederoDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ProveedoresContactos" EntityType="Self.ProveedoresContactos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ProveedoresDirecciones" EntityType="Self.ProveedoresDirecciones" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Puestos" EntityType="Self.Puestos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Resguardos" EntityType="Self.Resguardos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ResguardosDetalles" EntityType="Self.ResguardosDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="ResguardosLotesSeries" EntityType="Self.ResguardosLotesSeries" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Responsables" EntityType="Self.Responsables" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="SaldosMonedero" EntityType="Self.SaldosMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="SociosMonedero" EntityType="Self.SociosMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="SolicitudesCanjeMonedero" EntityType="Self.SolicitudesCanjeMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="SolicitudesCanjeMonederoDetalles" EntityType="Self.SolicitudesCanjeMonederoDetalles" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="SubgruposComponentes" EntityType="Self.SubgruposComponentes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="TiposCambio" EntityType="Self.TiposCambio" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="TiposComponentes" EntityType="Self.TiposComponentes" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="TiposDocumentos" EntityType="Self.TiposDocumentos" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="TokensMonedero" EntityType="Self.TokensMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="Unidades" EntityType="Self.Unidades" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="UsuariosMonedero" EntityType="Self.UsuariosMonedero" Schema="oco160101" store:Type="Tables" />
+    <EntitySet Name="CondicionesPagoPlazos" EntityType="Self.CondicionesPagoPlazos" store:Type="Tables" store:Schema="oco160101">
+      <DefiningQuery>SELECT
+`CondicionesPagoPlazos`.`Id`, 
+`CondicionesPagoPlazos`.`CondicionesPagoId`, 
+`CondicionesPagoPlazos`.`Dias`, 
+`CondicionesPagoPlazos`.`Porcentaje`, 
+`CondicionesPagoPlazos`.`UsuarioCreo`, 
+`CondicionesPagoPlazos`.`FechaCreacion`, 
+`CondicionesPagoPlazos`.`UsuarioModifico`, 
+`CondicionesPagoPlazos`.`FechaUltimaModificacion`
+FROM `CondicionesPagoPlazos` AS `CondicionesPagoPlazos`</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="Ciudades_ibfk_1" Association="Self.Ciudades_ibfk_1">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Ciudades" EntitySet="Ciudades" />
+    </AssociationSet>
+    <AssociationSet Name="Ciudades_ibfk_2" Association="Self.Ciudades_ibfk_2">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Ciudades" EntitySet="Ciudades" />
+    </AssociationSet>
+    <AssociationSet Name="Ciudades_ibfk_3" Association="Self.Ciudades_ibfk_3">
+      <End Role="Municipios" EntitySet="Municipios" />
+      <End Role="Ciudades" EntitySet="Ciudades" />
+    </AssociationSet>
+    <AssociationSet Name="CodigosPostales_ibfk_1" Association="Self.CodigosPostales_ibfk_1">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+    </AssociationSet>
+    <AssociationSet Name="CodigosPostales_ibfk_2" Association="Self.CodigosPostales_ibfk_2">
+      <End Role="Municipios" EntitySet="Municipios" />
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+    </AssociationSet>
+    <AssociationSet Name="CodigosPostales_ibfk_3" Association="Self.CodigosPostales_ibfk_3">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+    </AssociationSet>
+    <AssociationSet Name="CodigosPostales_ibfk_4" Association="Self.CodigosPostales_ibfk_4">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+    </AssociationSet>
+    <AssociationSet Name="Colonias_ibfk_1" Association="Self.Colonias_ibfk_1">
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+      <End Role="Colonias" EntitySet="Colonias" />
+    </AssociationSet>
+    <AssociationSet Name="Colonias_ibfk_2" Association="Self.Colonias_ibfk_2">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Colonias" EntitySet="Colonias" />
+    </AssociationSet>
+    <AssociationSet Name="Colonias_ibfk_3" Association="Self.Colonias_ibfk_3">
+      <End Role="Municipios" EntitySet="Municipios" />
+      <End Role="Colonias" EntitySet="Colonias" />
+    </AssociationSet>
+    <AssociationSet Name="Colonias_ibfk_4" Association="Self.Colonias_ibfk_4">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Colonias" EntitySet="Colonias" />
+    </AssociationSet>
+    <AssociationSet Name="Colonias_ibfk_5" Association="Self.Colonias_ibfk_5">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Colonias" EntitySet="Colonias" />
+    </AssociationSet>
+    <AssociationSet Name="Estados_ibfk_1" Association="Self.Estados_ibfk_1">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Estados" EntitySet="Estados" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Almacenes_Ciudades1" Association="Self.fk_Almacenes_Ciudades1">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="Almacenes" EntitySet="Almacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Almacenes_CodigosPostales1" Association="Self.fk_Almacenes_CodigosPostales1">
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+      <End Role="Almacenes" EntitySet="Almacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Almacenes_Colonias1" Association="Self.fk_Almacenes_Colonias1">
+      <End Role="Colonias" EntitySet="Colonias" />
+      <End Role="Almacenes" EntitySet="Almacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Almacenes_Estados1" Association="Self.fk_Almacenes_Estados1">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Almacenes" EntitySet="Almacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Almacenes_Municipios1" Association="Self.fk_Almacenes_Municipios1">
+      <End Role="Municipios" EntitySet="Municipios" />
+      <End Role="Almacenes" EntitySet="Almacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Almacenes_Paises1" Association="Self.fk_Almacenes_Paises1">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Almacenes" EntitySet="Almacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Almacenes_TiposComponentes1" Association="Self.fk_Almacenes_TiposComponentes1">
+      <End Role="TiposComponentes" EntitySet="TiposComponentes" />
+      <End Role="Almacenes" EntitySet="Almacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AlmacenesGruposComponentes_Almacenes1" Association="Self.fk_AlmacenesGruposComponentes_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="AlmacenesGruposComponentes" EntitySet="AlmacenesGruposComponentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AlmacenesGruposComponentes_GruposComponentes1" Association="Self.fk_AlmacenesGruposComponentes_GruposComponentes1">
+      <End Role="GruposComponentes" EntitySet="GruposComponentes" />
+      <End Role="AlmacenesGruposComponentes" EntitySet="AlmacenesGruposComponentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CentrosCanjeMonedero_Almacenes1" Association="Self.fk_CentrosCanjeMonedero_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="CentrosCanjeMonedero" EntitySet="CentrosCanjeMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CentrosCanjeUsuarioMonedero_CentrosCanjeMonedero1" Association="Self.fk_CentrosCanjeUsuarioMonedero_CentrosCanjeMonedero1">
+      <End Role="CentrosCanjeMonedero" EntitySet="CentrosCanjeMonedero" />
+      <End Role="CentrosCanjeUsuariosMonedero" EntitySet="CentrosCanjeUsuariosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Componentes_GruposComponentes1" Association="Self.fk_Componentes_GruposComponentes1">
+      <End Role="GruposComponentes" EntitySet="GruposComponentes" />
+      <End Role="Componentes" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Componentes_GruposUnidades1" Association="Self.fk_Componentes_GruposUnidades1">
+      <End Role="GruposUnidades" EntitySet="GruposUnidades" />
+      <End Role="Componentes" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Componentes_Marcas_Componentes1" Association="Self.fk_Componentes_Marcas_Componentes1">
+      <End Role="MarcasComponentes" EntitySet="MarcasComponentes" />
+      <End Role="Componentes" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Componentes_SubgruposComponentes1" Association="Self.fk_Componentes_SubgruposComponentes1">
+      <End Role="SubgruposComponentes" EntitySet="SubgruposComponentes" />
+      <End Role="Componentes" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Componentes_TiposComponentes1" Association="Self.fk_Componentes_TiposComponentes1">
+      <End Role="TiposComponentes" EntitySet="TiposComponentes" />
+      <End Role="Componentes" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Componentes_Unidades1" Association="Self.fk_Componentes_Unidades1">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="Componentes" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Componentes_Unidades2" Association="Self.fk_Componentes_Unidades2">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="Componentes" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Componentes_Unidades3" Association="Self.fk_Componentes_Unidades3">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="Componentes" EntitySet="Componentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesAlmacenes_Almacenes1" Association="Self.fk_ComponentesAlmacenes_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="ComponentesAlmacenes" EntitySet="ComponentesAlmacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesAlmacenes_AlmacenesGruposComponentes1" Association="Self.fk_ComponentesAlmacenes_AlmacenesGruposComponentes1">
+      <End Role="AlmacenesGruposComponentes" EntitySet="AlmacenesGruposComponentes" />
+      <End Role="ComponentesAlmacenes" EntitySet="ComponentesAlmacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesAlmacenes_Componentes1" Association="Self.fk_ComponentesAlmacenes_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComponentesAlmacenes" EntitySet="ComponentesAlmacenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesAlmacenes_Componentes10" Association="Self.fk_ComponentesAlmacenes_Componentes10">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComponentesFormulaDetalles" EntitySet="ComponentesFormulaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesAlmacenes_Componentes100" Association="Self.fk_ComponentesAlmacenes_Componentes100">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComponentesFormula" EntitySet="ComponentesFormula" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesCodigosBarra_Componentes1" Association="Self.fk_ComponentesCodigosBarra_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComponentesCodigosBarras" EntitySet="ComponentesCodigosBarras" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesCodigosBarra_Componentes10" Association="Self.fk_ComponentesCodigosBarra_Componentes10">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComponentesImagenes" EntitySet="ComponentesImagenes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesCodigosBarra_Unidades1" Association="Self.fk_ComponentesCodigosBarra_Unidades1">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="ComponentesCodigosBarras" EntitySet="ComponentesCodigosBarras" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesEquivalenciasPartes_Componentes1" Association="Self.fk_ComponentesEquivalenciasPartes_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComponentesEquivalenciasPartes" EntitySet="ComponentesEquivalenciasPartes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesEquivalenciasPartes_MarcasComponentes1" Association="Self.fk_ComponentesEquivalenciasPartes_MarcasComponentes1">
+      <End Role="MarcasComponentes" EntitySet="MarcasComponentes" />
+      <End Role="ComponentesEquivalenciasPartes" EntitySet="ComponentesEquivalenciasPartes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesFormula_Componentes1" Association="Self.fk_ComponentesFormula_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComponentesFormulaDetalles" EntitySet="ComponentesFormulaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesFormula_Unidades1" Association="Self.fk_ComponentesFormula_Unidades1">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="ComponentesFormulaDetalles" EntitySet="ComponentesFormulaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesFormulaDetalles_ComponentesFormula1" Association="Self.fk_ComponentesFormulaDetalles_ComponentesFormula1">
+      <End Role="ComponentesFormula" EntitySet="ComponentesFormula" />
+      <End Role="ComponentesFormulaDetalles" EntitySet="ComponentesFormulaDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesImpuestos_Componentes1" Association="Self.fk_ComponentesImpuestos_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComponentesImpuestos" EntitySet="ComponentesImpuestos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComponentesImpuestos_Impuestos1" Association="Self.fk_ComponentesImpuestos_Impuestos1">
+      <End Role="Impuestos" EntitySet="Impuestos" />
+      <End Role="ComponentesImpuestos" EntitySet="ComponentesImpuestos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocs_Almacenes1" Association="Self.fk_ComprasDocs_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocs_CondicionesPago1" Association="Self.fk_ComprasDocs_CondicionesPago1">
+      <End Role="CondicionesPago" EntitySet="CondicionesPago" />
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocs_Departamentos1" Association="Self.fk_ComprasDocs_Departamentos1">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocs_Monedas1" Association="Self.fk_ComprasDocs_Monedas1">
+      <End Role="Monedas" EntitySet="Monedas" />
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocs_Proveedores1" Association="Self.fk_ComprasDocs_Proveedores1">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocs_Responsables1" Association="Self.fk_ComprasDocs_Responsables1">
+      <End Role="Responsables" EntitySet="Responsables" />
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsDetalles_Componentes1" Association="Self.fk_ComprasDocsDetalles_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ComprasDocsDetalles" EntitySet="ComprasDocsDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsDetalles_ComprasDocs1" Association="Self.fk_ComprasDocsDetalles_ComprasDocs1">
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+      <End Role="ComprasDocsDetalles" EntitySet="ComprasDocsDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsDetalles_ComprasDocs10" Association="Self.fk_ComprasDocsDetalles_ComprasDocs10">
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+      <End Role="ComprasDocsImpuestos" EntitySet="ComprasDocsImpuestos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsDetalles_ComprasDocs100" Association="Self.fk_ComprasDocsDetalles_ComprasDocs100">
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+      <End Role="ComprasDocsRelaciones" EntitySet="ComprasDocsRelaciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsDetalles_ComprasDocs1000" Association="Self.fk_ComprasDocsDetalles_ComprasDocs1000">
+      <End Role="ComprasDocsDetalles" EntitySet="ComprasDocsDetalles" />
+      <End Role="ComprasDocsRelacionesDetalles" EntitySet="ComprasDocsRelacionesDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsDetalles_GruposUnidades1" Association="Self.fk_ComprasDocsDetalles_GruposUnidades1">
+      <End Role="GruposUnidades" EntitySet="GruposUnidades" />
+      <End Role="ComprasDocsDetalles" EntitySet="ComprasDocsDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsDetalles_Unidades1" Association="Self.fk_ComprasDocsDetalles_Unidades1">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="ComprasDocsDetalles" EntitySet="ComprasDocsDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsDetalles_Unidades2" Association="Self.fk_ComprasDocsDetalles_Unidades2">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="ComprasDocsDetalles" EntitySet="ComprasDocsDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsImpuestos_Impuestos1" Association="Self.fk_ComprasDocsImpuestos_Impuestos1">
+      <End Role="Impuestos" EntitySet="Impuestos" />
+      <End Role="ComprasDocsImpuestos" EntitySet="ComprasDocsImpuestos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsLotesSeries_ComprasDocsDetalles1" Association="Self.fk_ComprasDocsLotesSeries_ComprasDocsDetalles1">
+      <End Role="ComprasDocsDetalles" EntitySet="ComprasDocsDetalles" />
+      <End Role="ComprasDocsLotesSeries" EntitySet="ComprasDocsLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsLotesSeries_LotesSeries1" Association="Self.fk_ComprasDocsLotesSeries_LotesSeries1">
+      <End Role="LotesSeries" EntitySet="LotesSeries" />
+      <End Role="ComprasDocsLotesSeries" EntitySet="ComprasDocsLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsRelaciones_ComprasDocs1" Association="Self.fk_ComprasDocsRelaciones_ComprasDocs1">
+      <End Role="ComprasDocs" EntitySet="ComprasDocs" />
+      <End Role="ComprasDocsRelaciones" EntitySet="ComprasDocsRelaciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ComprasDocsRelacionesDetalles_ComprasDocs1" Association="Self.fk_ComprasDocsRelacionesDetalles_ComprasDocs1">
+      <End Role="ComprasDocsDetalles" EntitySet="ComprasDocsDetalles" />
+      <End Role="ComprasDocsRelacionesDetalles" EntitySet="ComprasDocsRelacionesDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ConceptosES_TiposDocumentos1" Association="Self.fk_ConceptosES_TiposDocumentos1">
+      <End Role="TiposDocumentos" EntitySet="TiposDocumentos" />
+      <End Role="ConceptosES" EntitySet="ConceptosES" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DireccionesProveedores_Proveedores1" Association="Self.fk_DireccionesProveedores_Proveedores1">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="ProveedoresDirecciones" EntitySet="ProveedoresDirecciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DireccionesProveedores_Proveedores10" Association="Self.fk_DireccionesProveedores_Proveedores10">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="ProveedoresContactos" EntitySet="ProveedoresContactos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventarios_Almacenes1" Association="Self.fk_ESInventarios_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="InventariosES" EntitySet="InventariosES" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventarios_ConceptosES1" Association="Self.fk_ESInventarios_ConceptosES1">
+      <End Role="ConceptosES" EntitySet="ConceptosES" />
+      <End Role="InventariosES" EntitySet="InventariosES" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventariosDetalles_Almacenes1" Association="Self.fk_ESInventariosDetalles_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="InventariosESDetalles" EntitySet="InventariosESDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventariosDetalles_AlmacenesGruposComponentes1" Association="Self.fk_ESInventariosDetalles_AlmacenesGruposComponentes1">
+      <End Role="ComponentesAlmacenes" EntitySet="ComponentesAlmacenes" />
+      <End Role="InventariosESDetalles" EntitySet="InventariosESDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventariosDetalles_AlmacenesGruposComponentes10" Association="Self.fk_ESInventariosDetalles_AlmacenesGruposComponentes10">
+      <End Role="ComponentesAlmacenes" EntitySet="ComponentesAlmacenes" />
+      <End Role="InventariosFisicosDetalles" EntitySet="InventariosFisicosDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventariosDetalles_Componentes1" Association="Self.fk_ESInventariosDetalles_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="InventariosESDetalles" EntitySet="InventariosESDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventariosDetalles_Componentes10" Association="Self.fk_ESInventariosDetalles_Componentes10">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="InventariosFisicosDetalles" EntitySet="InventariosFisicosDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventariosDetalles_Componentes1001" Association="Self.fk_ESInventariosDetalles_Componentes1001">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="LotesSeries" EntitySet="LotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventariosDetalles_ConceptosES1" Association="Self.fk_ESInventariosDetalles_ConceptosES1">
+      <End Role="ConceptosES" EntitySet="ConceptosES" />
+      <End Role="InventariosESDetalles" EntitySet="InventariosESDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ESInventariosDetalles_ESInventarios1" Association="Self.fk_ESInventariosDetalles_ESInventarios1">
+      <End Role="InventariosES" EntitySet="InventariosES" />
+      <End Role="InventariosESDetalles" EntitySet="InventariosESDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ExistenciasLotesSeries_Almacenes1" Association="Self.fk_ExistenciasLotesSeries_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="ExistenciasLotesSeries" EntitySet="ExistenciasLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ExistenciasLotesSeries_Componentes1" Association="Self.fk_ExistenciasLotesSeries_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ExistenciasLotesSeries" EntitySet="ExistenciasLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GruposComponentes_TiposComponentes1" Association="Self.fk_GruposComponentes_TiposComponentes1">
+      <End Role="TiposComponentes" EntitySet="TiposComponentes" />
+      <End Role="GruposComponentes" EntitySet="GruposComponentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GruposUnidadesDetalle_GruposUnidades1" Association="Self.fk_GruposUnidadesDetalle_GruposUnidades1">
+      <End Role="GruposUnidades" EntitySet="GruposUnidades" />
+      <End Role="GruposUnidadesDetalle" EntitySet="GruposUnidadesDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GruposUnidadesDetalle_Unidades1" Association="Self.fk_GruposUnidadesDetalle_Unidades1">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="GruposUnidadesDetalle" EntitySet="GruposUnidadesDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="fk_GruposUnidadesDetalle_Unidades2" Association="Self.fk_GruposUnidadesDetalle_Unidades2">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="GruposUnidadesDetalle" EntitySet="GruposUnidadesDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Impuestos_Unidades1" Association="Self.fk_Impuestos_Unidades1">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="Impuestos" EntitySet="Impuestos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ImpuestosGravados_Impuestos1" Association="Self.fk_ImpuestosGravados_Impuestos1">
+      <End Role="Impuestos" EntitySet="Impuestos" />
+      <End Role="ImpuestosGravados" EntitySet="ImpuestosGravados" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ImpuestosGravados_Impuestos2" Association="Self.fk_ImpuestosGravados_Impuestos2">
+      <End Role="Impuestos" EntitySet="Impuestos" />
+      <End Role="ImpuestosGravados" EntitySet="ImpuestosGravados" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosES_Almacenes1" Association="Self.fk_InventariosES_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="InventariosES" EntitySet="InventariosES" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosES_TiposDocumentos1" Association="Self.fk_InventariosES_TiposDocumentos1">
+      <End Role="TiposDocumentos" EntitySet="TiposDocumentos" />
+      <End Role="InventariosES" EntitySet="InventariosES" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosESLotesSeries_InventariosESDetalles1" Association="Self.fk_InventariosESLotesSeries_InventariosESDetalles1">
+      <End Role="InventariosESDetalles" EntitySet="InventariosESDetalles" />
+      <End Role="InventariosESLotesSeries" EntitySet="InventariosESLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosESLotesSeries_LotesSeries1" Association="Self.fk_InventariosESLotesSeries_LotesSeries1">
+      <End Role="LotesSeries" EntitySet="LotesSeries" />
+      <End Role="InventariosESLotesSeries" EntitySet="InventariosESLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosFisicos_InventariosES1" Association="Self.fk_InventariosFisicos_InventariosES1">
+      <End Role="InventariosES" EntitySet="InventariosES" />
+      <End Role="InventariosFisicos" EntitySet="InventariosFisicos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosFisicos_InventariosES2" Association="Self.fk_InventariosFisicos_InventariosES2">
+      <End Role="InventariosES" EntitySet="InventariosES" />
+      <End Role="InventariosFisicos" EntitySet="InventariosFisicos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosFisicosDetalles_InventariosESDetalles1" Association="Self.fk_InventariosFisicosDetalles_InventariosESDetalles1">
+      <End Role="InventariosESDetalles" EntitySet="InventariosESDetalles" />
+      <End Role="InventariosFisicosDetalles" EntitySet="InventariosFisicosDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosFisicosDetalles_InventariosFisicos1" Association="Self.fk_InventariosFisicosDetalles_InventariosFisicos1">
+      <End Role="InventariosFisicos" EntitySet="InventariosFisicos" />
+      <End Role="InventariosFisicosDetalles" EntitySet="InventariosFisicosDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosFisicosLotesSeries_InventariosFisicosDetalles1" Association="Self.fk_InventariosFisicosLotesSeries_InventariosFisicosDetalles1">
+      <End Role="InventariosFisicosDetalles" EntitySet="InventariosFisicosDetalles" />
+      <End Role="InventariosFisicosLotesSeries" EntitySet="InventariosFisicosLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosFisicosLotesSeries_LotesSeries1" Association="Self.fk_InventariosFisicosLotesSeries_LotesSeries1">
+      <End Role="LotesSeries" EntitySet="LotesSeries" />
+      <End Role="InventariosFisicosLotesSeries" EntitySet="InventariosFisicosLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosFisicosLotesSeries_LotesSeries10" Association="Self.fk_InventariosFisicosLotesSeries_LotesSeries10">
+      <End Role="LotesSeries" EntitySet="LotesSeries" />
+      <End Role="ExistenciasLotesSeries" EntitySet="ExistenciasLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosSaldos_Almacenes1" Association="Self.fk_InventariosSaldos_Almacenes1">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="InventariosSaldos" EntitySet="InventariosSaldos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosSaldos_Almacenes10" Association="Self.fk_InventariosSaldos_Almacenes10">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="InventariosCostos" EntitySet="InventariosCostos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosSaldos_Almacenes100" Association="Self.fk_InventariosSaldos_Almacenes100">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="InventariosFisicos" EntitySet="InventariosFisicos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosSaldos_Componentes1" Association="Self.fk_InventariosSaldos_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="InventariosSaldos" EntitySet="InventariosSaldos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_InventariosSaldos_Componentes10" Association="Self.fk_InventariosSaldos_Componentes10">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="InventariosCostos" EntitySet="InventariosCostos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Monedas_CodigosISOMonedas1" Association="Self.fk_Monedas_CodigosISOMonedas1">
+      <End Role="CodigosISOMonedas" EntitySet="CodigosISOMonedas" />
+      <End Role="Monedas" EntitySet="Monedas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonedero_CentrosCanjeMonedero1" Association="Self.fk_MovimientosMonedero_CentrosCanjeMonedero1">
+      <End Role="CentrosCanjeMonedero" EntitySet="CentrosCanjeMonedero" />
+      <End Role="MovimientosMonedero" EntitySet="MovimientosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonedero_PremiosMonedero10" Association="Self.fk_MovimientosMonedero_PremiosMonedero10">
+      <End Role="PremiosMonedero" EntitySet="PremiosMonedero" />
+      <End Role="SolicitudesCanjeMonederoDetalles" EntitySet="SolicitudesCanjeMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonedero_SociosMonedero1" Association="Self.fk_MovimientosMonedero_SociosMonedero1">
+      <End Role="SociosMonedero" EntitySet="SociosMonedero" />
+      <End Role="MovimientosMonedero" EntitySet="MovimientosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonedero_UsuariosMonedero1" Association="Self.fk_MovimientosMonedero_UsuariosMonedero1">
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+      <End Role="MovimientosMonedero" EntitySet="MovimientosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonedero_UsuariosMonedero10" Association="Self.fk_MovimientosMonedero_UsuariosMonedero10">
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+      <End Role="SolicitudesCanjeMonederoDetalles" EntitySet="SolicitudesCanjeMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonedero_UsuariosMonedero100" Association="Self.fk_MovimientosMonedero_UsuariosMonedero100">
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+      <End Role="SolicitudesCanjeMonedero" EntitySet="SolicitudesCanjeMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonederoDetalles_MovimientosMonedero1" Association="Self.fk_MovimientosMonederoDetalles_MovimientosMonedero1">
+      <End Role="MovimientosMonedero" EntitySet="MovimientosMonedero" />
+      <End Role="MovimientosMonederoDetalles" EntitySet="MovimientosMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonederoDetalles_PremiosMonedero1" Association="Self.fk_MovimientosMonederoDetalles_PremiosMonedero1">
+      <End Role="PremiosMonedero" EntitySet="PremiosMonedero" />
+      <End Role="MovimientosMonederoDetalles" EntitySet="MovimientosMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_MovimientosMonederoDetalles_SolicitudesCanjeMonederoDetall1" Association="Self.fk_MovimientosMonederoDetalles_SolicitudesCanjeMonederoDetall1">
+      <End Role="SolicitudesCanjeMonederoDetalles" EntitySet="SolicitudesCanjeMonederoDetalles" />
+      <End Role="MovimientosMonederoDetalles" EntitySet="MovimientosMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PremiosMonederoDetalles_Componentes1" Association="Self.fk_PremiosMonederoDetalles_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="PremiosMonederoDetalles" EntitySet="PremiosMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PremiosMonederoDetalles_PremiosMonedero1" Association="Self.fk_PremiosMonederoDetalles_PremiosMonedero1">
+      <End Role="PremiosMonedero" EntitySet="PremiosMonedero" />
+      <End Role="PremiosMonederoDetalles" EntitySet="PremiosMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PremiosMonederoDetalles_Unidades1" Association="Self.fk_PremiosMonederoDetalles_Unidades1">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="PremiosMonederoDetalles" EntitySet="PremiosMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_PremiosMonederoDetalles_Unidades2" Association="Self.fk_PremiosMonederoDetalles_Unidades2">
+      <End Role="Unidades" EntitySet="Unidades" />
+      <End Role="PremiosMonederoDetalles" EntitySet="PremiosMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Proveedores_CondicionesPago1" Association="Self.fk_Proveedores_CondicionesPago1">
+      <End Role="CondicionesPago" EntitySet="CondicionesPago" />
+      <End Role="Proveedores" EntitySet="Proveedores" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Proveedores_Giros1" Association="Self.fk_Proveedores_Giros1">
+      <End Role="Giros" EntitySet="Giros" />
+      <End Role="Proveedores" EntitySet="Proveedores" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Proveedores_GrupoProveedores1" Association="Self.fk_Proveedores_GrupoProveedores1">
+      <End Role="GrupoProveedores" EntitySet="GrupoProveedores" />
+      <End Role="Proveedores" EntitySet="Proveedores" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Proveedores_Monedas1" Association="Self.fk_Proveedores_Monedas1">
+      <End Role="Monedas" EntitySet="Monedas" />
+      <End Role="Proveedores" EntitySet="Proveedores" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresContactos_Ciudades1" Association="Self.fk_ProveedoresContactos_Ciudades1">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="ProveedoresContactos" EntitySet="ProveedoresContactos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresContactos_CodigosPostales1" Association="Self.fk_ProveedoresContactos_CodigosPostales1">
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+      <End Role="ProveedoresContactos" EntitySet="ProveedoresContactos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresContactos_Colonias1" Association="Self.fk_ProveedoresContactos_Colonias1">
+      <End Role="Colonias" EntitySet="Colonias" />
+      <End Role="ProveedoresContactos" EntitySet="ProveedoresContactos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresContactos_Estados1" Association="Self.fk_ProveedoresContactos_Estados1">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="ProveedoresContactos" EntitySet="ProveedoresContactos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresContactos_Municipios1" Association="Self.fk_ProveedoresContactos_Municipios1">
+      <End Role="Municipios" EntitySet="Municipios" />
+      <End Role="ProveedoresContactos" EntitySet="ProveedoresContactos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresContactos_Paises1" Association="Self.fk_ProveedoresContactos_Paises1">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="ProveedoresContactos" EntitySet="ProveedoresContactos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresDirecciones_Ciudades1" Association="Self.fk_ProveedoresDirecciones_Ciudades1">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="ProveedoresDirecciones" EntitySet="ProveedoresDirecciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresDirecciones_CodigosPostales1" Association="Self.fk_ProveedoresDirecciones_CodigosPostales1">
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+      <End Role="ProveedoresDirecciones" EntitySet="ProveedoresDirecciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresDirecciones_Colonias1" Association="Self.fk_ProveedoresDirecciones_Colonias1">
+      <End Role="Colonias" EntitySet="Colonias" />
+      <End Role="ProveedoresDirecciones" EntitySet="ProveedoresDirecciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresDirecciones_Estados1" Association="Self.fk_ProveedoresDirecciones_Estados1">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="ProveedoresDirecciones" EntitySet="ProveedoresDirecciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresDirecciones_Municipios1" Association="Self.fk_ProveedoresDirecciones_Municipios1">
+      <End Role="Municipios" EntitySet="Municipios" />
+      <End Role="ProveedoresDirecciones" EntitySet="ProveedoresDirecciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ProveedoresDirecciones_Paises1" Association="Self.fk_ProveedoresDirecciones_Paises1">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="ProveedoresDirecciones" EntitySet="ProveedoresDirecciones" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Puestos_Departamentos1" Association="Self.fk_Puestos_Departamentos1">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Puestos" EntitySet="Puestos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Resguardos_Almacenes" Association="Self.fk_Resguardos_Almacenes">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="Resguardos" EntitySet="Resguardos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Resguardos_LotesSeries" Association="Self.fk_Resguardos_LotesSeries">
+      <End Role="LotesSeries" EntitySet="LotesSeries" />
+      <End Role="ResguardosLotesSeries" EntitySet="ResguardosLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Resguardos_Responsables" Association="Self.fk_Resguardos_Responsables">
+      <End Role="Responsables" EntitySet="Responsables" />
+      <End Role="Resguardos" EntitySet="Resguardos" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResguardosDetalles_Almacenes" Association="Self.fk_ResguardosDetalles_Almacenes">
+      <End Role="Almacenes" EntitySet="Almacenes" />
+      <End Role="ResguardosDetalles" EntitySet="ResguardosDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResguardosDetalles_Componentes" Association="Self.fk_ResguardosDetalles_Componentes">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ResguardosDetalles" EntitySet="ResguardosDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResguardosDetalles_ComponentesAlmacenes" Association="Self.fk_ResguardosDetalles_ComponentesAlmacenes">
+      <End Role="ComponentesAlmacenes" EntitySet="ComponentesAlmacenes" />
+      <End Role="ResguardosDetalles" EntitySet="ResguardosDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResguardosDetalles_Resguardos" Association="Self.fk_ResguardosDetalles_Resguardos">
+      <End Role="Resguardos" EntitySet="Resguardos" />
+      <End Role="ResguardosDetalles" EntitySet="ResguardosDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResguardosLotesSeries_Componentes1" Association="Self.fk_ResguardosLotesSeries_Componentes1">
+      <End Role="Componentes" EntitySet="Componentes" />
+      <End Role="ResguardosLotesSeries" EntitySet="ResguardosLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResguardosLotesSeries_Resguardos1" Association="Self.fk_ResguardosLotesSeries_Resguardos1">
+      <End Role="Resguardos" EntitySet="Resguardos" />
+      <End Role="ResguardosLotesSeries" EntitySet="ResguardosLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResguardosLotesSeries_ResguardosDetalles" Association="Self.fk_ResguardosLotesSeries_ResguardosDetalles">
+      <End Role="ResguardosDetalles" EntitySet="ResguardosDetalles" />
+      <End Role="ResguardosLotesSeries" EntitySet="ResguardosLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ResguardosLotesSeries_Responsables1" Association="Self.fk_ResguardosLotesSeries_Responsables1">
+      <End Role="Responsables" EntitySet="Responsables" />
+      <End Role="ResguardosLotesSeries" EntitySet="ResguardosLotesSeries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Responsables_Areas1" Association="Self.fk_Responsables_Areas1">
+      <End Role="Areas" EntitySet="Areas" />
+      <End Role="Responsables" EntitySet="Responsables" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Responsables_Departamentos1" Association="Self.fk_Responsables_Departamentos1">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Responsables" EntitySet="Responsables" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Responsables_Puestos1" Association="Self.fk_Responsables_Puestos1">
+      <End Role="Puestos" EntitySet="Puestos" />
+      <End Role="Responsables" EntitySet="Responsables" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SaldosMonedero_UsuariosMonedero1" Association="Self.fk_SaldosMonedero_UsuariosMonedero1">
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+      <End Role="SaldosMonedero" EntitySet="SaldosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SolicitudesCanjeMonederoDetalles_SolicitudesCanjeMonedero1" Association="Self.fk_SolicitudesCanjeMonederoDetalles_SolicitudesCanjeMonedero1">
+      <End Role="SolicitudesCanjeMonedero" EntitySet="SolicitudesCanjeMonedero" />
+      <End Role="SolicitudesCanjeMonederoDetalles" EntitySet="SolicitudesCanjeMonederoDetalles" />
+    </AssociationSet>
+    <AssociationSet Name="fk_SubgruposComponentes_GruposComponentes1" Association="Self.fk_SubgruposComponentes_GruposComponentes1">
+      <End Role="GruposComponentes" EntitySet="GruposComponentes" />
+      <End Role="SubgruposComponentes" EntitySet="SubgruposComponentes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UsuariosMonedero_Ciudades1" Association="Self.fk_UsuariosMonedero_Ciudades1">
+      <End Role="Ciudades" EntitySet="Ciudades" />
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UsuariosMonedero_CodigosPostales1" Association="Self.fk_UsuariosMonedero_CodigosPostales1">
+      <End Role="CodigosPostales" EntitySet="CodigosPostales" />
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UsuariosMonedero_Colonias1" Association="Self.fk_UsuariosMonedero_Colonias1">
+      <End Role="Colonias" EntitySet="Colonias" />
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UsuariosMonedero_Estados1" Association="Self.fk_UsuariosMonedero_Estados1">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UsuariosMonedero_Municipios1" Association="Self.fk_UsuariosMonedero_Municipios1">
+      <End Role="Municipios" EntitySet="Municipios" />
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="fk_UsuariosMonedero_Paises1" Association="Self.fk_UsuariosMonedero_Paises1">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="UsuariosMonedero" EntitySet="UsuariosMonedero" />
+    </AssociationSet>
+    <AssociationSet Name="Municipios_ibfk_1" Association="Self.Municipios_ibfk_1">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Municipios" EntitySet="Municipios" />
+    </AssociationSet>
+    <AssociationSet Name="Municipios_ibfk_2" Association="Self.Municipios_ibfk_2">
+      <End Role="Estados" EntitySet="Estados" />
+      <End Role="Municipios" EntitySet="Municipios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

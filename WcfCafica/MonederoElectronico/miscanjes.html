@@ -1,0 +1,47 @@
+<!-- Main -->
+<div class="row" ng-init="init()">
+  <div class='col-sm-12'>
+    <ol class="breadcrumb">
+      <li><a href="#">Inicio</a></li>
+      <li class="active">Canjes</li>        
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <div class='col-sm-12'>
+    <h2>Canjes</h2>
+    <hr/>
+  </div>
+</div>  
+<div class="row">
+  <div class='col-sm-12'>
+    <uib-accordion close-others="oneAtATime">
+	   <div ng-repeat="canje in LstCanjes" uib-accordion-group class="panel-default" id="Acordion{{canje.Id}}"  is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled" ng-click="AbrirCanje(this)">
+		  <uib-accordion-heading >
+	        <table class="canjes">
+				<tr>
+			    	<td width="25%" class="canjes"><b>Fecha:&nbsp;</b>{{ canje.FechaHora | dateFilter | date:'MM/dd/yy h:mm a' }}</td>
+			    	<td width="25%" class="canjes"><b>Pts:&nbsp;</b>{{ canje.TotalPuntosCanje | number }}</td>
+			    	<td width="25%" class="canjes"><b>Codigo:&nbsp;</b>{{ canje.CodigoCanje }}</td>
+			  	</tr>
+	        </table>
+	      </uib-accordion-heading>
+	      	<ul>
+			  <li ng-repeat="premio in canje.SolicitudesCanjeMonederoDetalles">{{ premio.PremiosMonedero.Nombre }}</li>
+			</ul>
+			<img src="img/ajax-loader.gif" alt="Cargando" class="center" ng-show="this.canje.SolicitudesCanjeMonederoDetalles.length == 0">
+	    </div>
+	 </uib-accordion>
+  </div>
+</div>    
+<hr>
+
+
+
+<script>
+  $(document).ready(function(){
+    
+    $('[data-toggle="tooltip"]').tooltip();   
+    
+});
+</script>

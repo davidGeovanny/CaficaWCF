@@ -1,0 +1,73 @@
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\WcfCafica.dll.config
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\WcfCafica.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\WcfCafica.pdb
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\EntityFramework.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\EntityFramework.SqlServer.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\JWT.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\MySql.Data.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\MySql.Data.Entity.EF6.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\Newtonsoft.Json.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\EntityFramework.xml
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\EntityFramework.SqlServer.xml
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\Newtonsoft.Json.xml
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\obj\Debug\WcfCafica.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\obj\Debug\WcfCafica.pdb
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.xml
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\kaviles\Documents\Visual Studio 2015\Projects\WcfCafica\WcfCafica\obj\Debug\WcfCafica.csprojResolveAssemblyReference.cache
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\WcfCafica.dll.config
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\WcfCafica.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\WcfCafica.pdb
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\EntityFramework.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\EntityFramework.SqlServer.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\JWT.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\MySql.Data.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\MySql.Data.Entity.EF6.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\Newtonsoft.Json.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\EntityFramework.xml
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\EntityFramework.SqlServer.xml
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.xml
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.xml
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\bin\Newtonsoft.Json.xml
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.csproj.AssemblyReference.cache
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.csproj.CoreCompileInputs.cache
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.csproj.CopyComplete
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.dll
+C:\Users\systh\SyStHeM\Proyectos\Alba Soluciones\Clientes\CAFICA\Soporte y Desarrollo\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.pdb
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\WcfCafica.dll.config
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\WcfCafica.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\WcfCafica.pdb
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\EntityFramework.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\EntityFramework.SqlServer.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\FirebirdSql.Data.FirebirdClient.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\JWT.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\MySql.Data.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\MySql.Data.Entity.EF6.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\Newtonsoft.Json.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\EntityFramework.xml
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\EntityFramework.SqlServer.xml
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\FirebirdSql.Data.FirebirdClient.pdb
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.xml
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\bin\Newtonsoft.Json.xml
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.csproj.AssemblyReference.cache
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.csproj.CoreCompileInputs.cache
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.csproj.CopyComplete
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.dll
+D:\Documentos\ERP_Cafica\Programacion\WcfCafica\WcfCafica\obj\Debug\WcfCafica.pdb

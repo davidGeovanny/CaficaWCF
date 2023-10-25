@@ -1,0 +1,31 @@
+<!--<div class="carrito">-->
+	<!--<div class="col-md-4 text-right">-->
+		<!--glyphicon glyphicon-shopping-cart-->
+		<!--<span class="glyphicon glyphicon-shopping-cart"></span>-->
+		<!--</div>-->
+	<!--<div class="col-md-8">-->
+	<!--</div>-->
+<!--</div>-->	
+<!--
+	<img src="././img/cart-outline.png">
+
+	
+	( {{ ngCart.getTotalItems() }} )
+	<ng-pluralize count="ngCart.getTotalItems()" when="{1: ' Artículo', 'other':' Artículos'}"></ng-pluralize>
+	
+	<br/>
+
+	( {{ ngCart.totalCost() }} )
+	<ng-pluralize count="ngCart.totalCost()" when="{1: ' Punto', 'other':' Puntos'}"></ng-pluralize>	
+-->		
+<div class="row">
+	<div class="col-md-2 text-right">
+		<img src="././img/cart-outline.png">
+	</div>
+	<div class="col-md-10 ng-binding">
+		( {{ ngCart.getTotalItems() }} )
+		<ng-pluralize count="ngCart.getTotalItems()" when="{1: ' Artículo', 'other':' Artículos'}"></ng-pluralize>
+		| ( {{ ngCart.totalCost() | number}} )
+		<ng-pluralize count="ngCart.totalCost()" when="{1: ' Punto', 'other':' Puntos'}"></ng-pluralize>
+	</div>
+</div>

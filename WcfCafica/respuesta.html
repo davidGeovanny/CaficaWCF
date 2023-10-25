@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Brissa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="img/favicon.png"> 
+  <style>
+      .page-footer{
+        padding-top:17px;
+        background-color:#003b67;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        text-align: center;
+      }
+      .page-footer .footer-copyright{
+        overflow:hidden;
+        min-height:50px;
+        display:-webkit-flex;
+        display:-ms-flexbox;
+        display:flex;
+        -webkit-align-items:center;
+        -ms-flex-align:center;
+        align-items:center;
+        padding:10px 0px;
+        /*color:rgba(255,255,255,0.8);*/
+        color: white;
+        background-color:#003b67;
+        text-align: center;
+        padding-left: 45%;
+      }
+      .nombre{
+        color: #0065ae;
+      }
+      h1,
+      .h1 {
+        font-size: 36px;
+      }
+      h2,
+      .h2 {
+        font-size: 30px;
+      }
+      h4,
+      .h4 {
+        font-size: 18px;
+      }
+      h5,
+      .h5 {
+        font-size: 14px;
+      }
+      h6,
+      .h6 {
+        font-size: 12px;
+      }
+      p {
+        margin: 0 0 10px;
+      }
+      .text-left {
+        text-align: left;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-justify {
+        text-align: justify;
+      }
+      .page-header {
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        border-bottom: 1px solid #eee;
+      }
+      .container {
+        /*padding-right: 25%;*/
+        padding-left: 25px;
+        /*margin-right: auto;*/
+        /*margin-left: auto;*/
+        /*min-height: 100%;
+        height: auto !important;
+        height: 100%;*/
+        width: 100%;
+        padding-left: 15%;
+      }
+      .container img{
+        width: 100%;
+      }
+      .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .row {
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+      .navbar {
+        position: relative;
+        min-height: 50px;
+        /*margin-bottom: 0px;*/
+        border: 1px solid transparent;
+      }
+      .navbar-header {
+        float: left;
+      }
+      .navbar-brand {
+        float: left;
+        height: 50px;
+        padding: 15px 15px;
+        font-size: 18px;
+        line-height: 20px;
+      }
+      .navbar-brand > img {
+        display: block;
+      }
+      .navbar-inverse {
+        background-color: #47a6de;
+        border-color: #47a6de;
+        height: 60px;
+      }
+      .navbar-brand img{
+        width: 120px;
+        position: relative;
+        margin-top: -10px;
+      }
+      .navbar-inverse input{
+        margin-top: 5px;
+      }
+      .navbar-inverse .navbar-brand {
+        /*color: #9d9d9d;*/
+        color: white;
+      }
+      .container > .navbar-header,
+      .container-fluid > .navbar-header,
+      .container > .navbar-collapse,
+      .container-fluid > .navbar-collapse {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      .navbar > .container .navbar-brand,
+      .navbar > .container-fluid .navbar-brand {
+        margin-left: -15px;
+      }
+      .jumbotron {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        color: inherit;
+        background-color: #eee;
+      }
+      .jumbotron h1,
+      .jumbotron .h1 {
+        color: inherit;
+      }
+      .jumbotron p {
+        margin-bottom: 15px;
+        font-size: 21px;
+        font-weight: 200;
+      }
+      .jumbotron > hr {
+        border-top-color: #d5d5d5;
+      }
+      .container .jumbotron,
+      .container-fluid .jumbotron {
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 6px;
+      }
+      .jumbotron .container {
+        max-width: 100%;
+      }
+      .jumbotron {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      .container .jumbotron,
+      .container-fluid .jumbotron {
+        padding-right: 60px;
+        padding-left: 60px;
+      }
+      .jumbotron h1,
+      .jumbotron .h1 {
+        font-size: 63px;
+      }
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div ng-app="myApp" ng-controller="LoginController" class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img src="http://brissa.mx/images/brissablanco.png">
+      </a>
+    </div>
+  </div>
+</nav>
+<!-- Main -->
+<div class="jumbotron text-center">
+  <h1>¡Gracias por verificar su registro!</h1>
+</div>
+<div class="container">
+  <br/>
+  <h1><label class="nombre">@nombre</label></h1>
+  <h2><p>Para acceder a su cuenta de monedero electrónico de <a href="@link">click aquí.&nbsp;</a></p></h2>
+  <p>¡Disfrute de su cuenta!</p>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</div>
+<!-- Main -->
+<!-- Footer -->
+<footer class="page-footer">
+  <div class="footer-copyright">
+      <h4>© 2017 Hielera Paraiso S.A. de C.V.</h4>
+  </div>
+</footer>
+<!-- Footer -->
+</body>
+</html>

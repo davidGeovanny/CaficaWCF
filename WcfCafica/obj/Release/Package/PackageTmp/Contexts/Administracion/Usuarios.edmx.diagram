@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8387900eb9d4d29ad2400caa32f5a1b" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="UsuariosModel.AccionesVistas" Width="1.5" PointX="7.5" PointY="20" />
+        <EntityTypeShape EntityType="UsuariosModel.BDEmpresas" Width="1.5" PointX="0.75" PointY="16" />
+        <EntityTypeShape EntityType="UsuariosModel.BDEmpresasRoles" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="UsuariosModel.GruposVistas" Width="1.5" PointX="5.25" PointY="10.25" />
+        <EntityTypeShape EntityType="UsuariosModel.Modulos" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="UsuariosModel.Roles" Width="1.5" PointX="0.75" PointY="4.5" />
+        <EntityTypeShape EntityType="UsuariosModel.RolesAcciones" Width="1.5" PointX="9.75" PointY="12.375" />
+        <EntityTypeShape EntityType="UsuariosModel.Sistemas" Width="1.5" PointX="0.75" PointY="8.625" />
+        <EntityTypeShape EntityType="UsuariosModel.SistemasRoles" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="UsuariosModel.t1" Width="1.5" PointX="9.75" PointY="4.375" />
+        <EntityTypeShape EntityType="UsuariosModel.t2" Width="1.5" PointX="9.75" PointY="9.375" />
+        <EntityTypeShape EntityType="UsuariosModel.t3" Width="1.5" PointX="12" PointY="4.25" />
+        <EntityTypeShape EntityType="UsuariosModel.Tablas" Width="1.5" PointX="5.25" PointY="14.625" />
+        <EntityTypeShape EntityType="UsuariosModel.Tokens" Width="1.5" PointX="14" PointY="7.25" />
+        <EntityTypeShape EntityType="UsuariosModel.Usuarios" Width="1.5" PointX="3.75" PointY="18.25" />
+        <EntityTypeShape EntityType="UsuariosModel.UsuariosRoles" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="UsuariosModel.Versiones" Width="1.5" PointX="11.75" PointY="7.375" />
+        <EntityTypeShape EntityType="UsuariosModel.Vistas" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="UsuariosModel.VistasFiltrosReportes" Width="1.5" PointX="7.5" PointY="14.875" />
+        <EntityTypeShape EntityType="UsuariosModel.VistasGruposVistas" Width="1.5" PointX="7.5" PointY="10.125" />
+        <EntityTypeShape EntityType="UsuariosModel.VistasTablas" Width="1.5" PointX="7.5" PointY="5.5" />
+        <AssociationConnector Association="UsuariosModel.fk_AccionesVistas_Vistas1" />
+        <AssociationConnector Association="UsuariosModel.fk_RolesAcciones_AccionesVistas1" />
+        <AssociationConnector Association="UsuariosModel.fk_BDEmpresasRoles_BDEmpresas1" />
+        <AssociationConnector Association="UsuariosModel.fk_BDEmpresasRoles_Roles1" />
+        <AssociationConnector Association="UsuariosModel.fk_GruposVistas_Modulos1" />
+        <AssociationConnector Association="UsuariosModel.GruposVistas_ibfk_1" />
+        <AssociationConnector Association="UsuariosModel.VistasGruposVistas_ibfk_1" />
+        <AssociationConnector Association="UsuariosModel.fk_Modulos_Sistemas1" />
+        <AssociationConnector Association="UsuariosModel.VistasGruposVistas_ibfk_3" />
+        <AssociationConnector Association="UsuariosModel.fk_RolesAcciones_Roles1" />
+        <AssociationConnector Association="UsuariosModel.fk_SistemasRoles_Roles1" />
+        <AssociationConnector Association="UsuariosModel.fk_UsuariosRoles_Roles1" />
+        <AssociationConnector Association="UsuariosModel.fk_SistemasRoles_Sistemas1" />
+        <AssociationConnector Association="UsuariosModel.VistasGruposVistas_ibfk_4" />
+        <AssociationConnector Association="UsuariosModel.fk_t3_t11" />
+        <AssociationConnector Association="UsuariosModel.fk_t3_t21" />
+        <AssociationConnector Association="UsuariosModel.VistasTablas_ibfk_2" />
+        <AssociationConnector Association="UsuariosModel.fk_Tokens_Versiones1" />
+        <AssociationConnector Association="UsuariosModel.fk_UsuariosRoles_Usuarios1" />
+        <AssociationConnector Association="UsuariosModel.VistasGruposVistas_ibfk_2" />
+        <AssociationConnector Association="UsuariosModel.VistasTablas_ibfk_1" />
+        <AssociationConnector Association="UsuariosModel.VistasTablas_ibfk_10" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

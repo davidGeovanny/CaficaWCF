@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-init="init()">
+<head>
+  <title>Brissa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="styleSheet" href="css/ui-grid.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="lib/angular.js"></script>
+  <script src="lib/angular-route.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/ng-infinite-scroll.js"></script>
+  <script type="text/javascript" src="lib/angular-animate.js"></script>
+  <script  type="text/javascript" src="lib/angular-sanitize.js"></script>
+  <script type="text/javascript" src="lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+  <script type="text/javascript" src="lib/mask.js"></script>
+  <script type="text/javascript" src="lib/compareto.js"></script>
+  <script type="text/javascript" src="lib/ngStorage.js"></script>
+  <script type="text/javascript" src="lib/moment.min.js"></script>
+  <script type="text/javascript" src="lib/ui-grid.js"></script>
+  <script type="text/javascript" src="lib/ngCart.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/LoginController.js"></script>
+  <script src="controllers/MovimientosController.js"></script>
+  <script src="controllers/CanjesController.js"></script>
+  <script src="controllers/CarritoController.js"></script>
+  <script src="controllers/RegistroController.js"></script>
+  <script src="controllers/MisCanjesController.js"></script>
+  
+  
+  <link rel="shortcut icon" href="img/favicon.png"> 
+</head>
+<body>
+<!-- NavBar -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand">
+        <img src="img/brissablanco.png">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#!movimientos">Movimientos</a></li>
+        <li><a href="#!canjes">Premios</a></li> 
+        <li><a href="#!carrito">Carrito</a></li>
+        <li><a href="#!miscanjes">Mis Canjes</a></li>
+      </ul>  
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a ng-model="saldo">
+            <img src="img/cartera.png">
+            <span class="saldo">{{ saldo | number }}</span>
+          </a>
+        </li> 
+        <!--<li><a ng-model="saldo"><img src="img/cartera.png"><span class="saldo">{{ saldo | number }}</span></a></li>-->
+        <li><a href="#!carrito"><ngcart-summary></ngcart-summary></a></li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+<!-- NavBar -->
+<!-- Container -->
+<div class="container2" ng-view>
+  
+</div>
+
+<div id="ModalLoader" class="modalBrissa  text-center" role="dialog">
+  <div class="modal-body">
+      <img src="img/loader-app.gif">
+  </div>
+</div>
+<!-- Container -->
+
+<!-- Footer
+
+<footer class="footer">
+  <p>© 2017 Hielera Paraiso S.A. de C.V.</p>
+</footer>
+-->
+</body>
+</html>

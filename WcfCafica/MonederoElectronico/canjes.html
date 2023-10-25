@@ -1,0 +1,61 @@
+<!-- Main -->
+<div class="row" ng-init="init()">
+  <div class='col-sm-12'>
+    <ol class="breadcrumb">
+      <li><a href="#">Inicio</a></li>
+      <li class="active">Canjes</li>        
+    </ol>
+  </div>
+</div>
+<div class="row">
+  <div class='col-sm-12'>
+    <div class="container2 text-center">    
+      <h3>Promociones Disponibles</h3><hr/>
+      <div class="row" infinite-scroll='init()' infinite-scroll-disabled='$scope.CargandoPremios' infinite-scroll-distance='0'>
+        <div class="col-sm-3 product-grids" ng-repeat="premio in Premios">
+          <!--
+          <img src="data:image/gif;base64,{{premio.ImagenBase64}}" class="img-responsive" style="width:100%" alt="Image">
+          <p>&nbsp;</p>
+          <ngcart-addtocart id="{{ premio.Id }}" name="{{ premio.Nombre }}" price="{{ premio.PuntosCanje }}" quantity="1" quantity-max="30" data="premio"></ngcart-addtocart>
+          <p>&nbsp;</p>
+          -->
+          <!--*******************************************************************************************************************-->
+          <div class="agile-products">
+              <div class="new-tag"><h6>{{ premio.PuntosCanje }} <br>pts.</h6></div>
+              <a href=""><img src="data:image/gif;base64,{{premio.ImagenBase64}}" class="img-responsive" style="width:100%" alt="Image"></a>
+              <div class="agile-product-text">              
+                  <h5>{{ premio.Nombre }}</h5> 
+                  <ngcart-addtocart id="{{ premio.Id }}" name="{{ premio.Nombre }}" price="{{ premio.PuntosCanje }}" quantity="1" quantity-max="30" data="premio"></ngcart-addtocart>
+              </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<br>
+<br>
+<!-- Main -->
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body">
+         <form>
+         <div class="panel panel-info">
+            <div class="panel-heading"><center>Detalle de promoción</center></div>
+          </div>
+          <div class="form-group">
+            <img src="img/canjes/3.png" class="img-responsive" style="width:100%" alt="Image">
+          </div>
+        </form> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success">Guardar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->

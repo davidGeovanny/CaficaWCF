@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="LoginController">
+<head>
+  <title>Brissa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="styleSheet" href="css/ui-grid.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="lib/angular.js"></script>
+  <script src="lib/angular-route.js"></script>
+  <script src="lib/bootstrap.min.js"></script>
+  <script src="lib/ng-infinite-scroll.js"></script>
+  <script type="text/javascript" src="lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+  <script type="text/javascript" src="lib/mask.js"></script>
+  <script type="text/javascript" src="lib/compareto.js"></script>
+  <script type="text/javascript" src="lib/ngStorage.js"></script>
+  <script type="text/javascript" src="lib/moment.min.js"></script>
+  <script type="text/javascript" src="lib/angular-animate.js"></script>
+  <script  type="text/javascript" src="lib/angular-sanitize.js"></script>
+  <script type="text/javascript" src="lib/ui-grid.js"></script>
+  <script type="text/javascript" src="lib/ngCart.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/LoginController.js"></script>
+  <script src="controllers/MovimientosController.js"></script>
+  <script src="controllers/CanjesController.js"></script>
+  <script src="controllers/CarritoController.js"></script>
+  <script src="controllers/RegistroController.js"></script>
+  <script src="controllers/MisCanjesController.js"></script>
+  
+  <link rel="shortcut icon" href="img/favicon.png"> 
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div  class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand">
+        <img src="img/brissablanco.png">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <form  novalidate  id="FrmLogin" name="FrmLogin" class="navbar-form">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Correo Electrónico" ng-model="acceso.Usuario" required>
+          </div>
+          <div class="form-group">  
+            <input type="password" class="form-control" placeholder="Contraseña" ng-model="acceso.Contrasena" required>
+          </div>
+          <button class="btn btn-info" ng-click="Login()" ng-disabled="savingfrm == true">
+             <i class="fa fa-spinner fa-spin" ng-show="savingfrm"></i>
+             <span ng-show="savingfrm">Validando</span>
+             <span ng-hide="savingfrm">Entrar</span>
+          </button>
+          <button class="btn btn-success" ng-click="ShowRegistro()">Registrarse</button>
+        </form>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Main -->
+  <div class="row">
+    <div class='imagenFondo'>
+    </div>
+  </div>
+
+<!-- Main -->
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Formulario De Registro</h4>
+      </div>
+      <div class="modal-body">
+         <form id="FrmRegistro" name="FrmRegistro" class="form-horizontal">
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmRegistro.nombre.$error.required && FrmRegistro.nombre.$touched}" >
+            <div class="col-sm-4">
+              <label class="control-label" for="nombre">Nombre:</label>
+            </div>
+            <div class="col-sm-12">
+                <input type="text" class="form-control" name="nombre" id="nombre" ng-model="usuario.Nombre" required >
+                <span  ng-show="FrmRegistro.nombre.$error.required && FrmRegistro.nombre.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-error': (FrmRegistro.uemail.$touched && FrmRegistro.uemail.$error.required) || (FrmRegistro.uemail.$touched && FrmRegistro.uemail.$error.email)}">
+            <div class="col-sm-4">
+              <label class="control-label" for="email">Correo Electrónico:</label>
+            </div>
+            <div class="col-sm-12">
+                <input type="email" class="form-control" name="uemail" id="email" ng-model="usuario.Email" required>
+                <span  ng-show="(FrmRegistro.uemail.$touched && FrmRegistro.uemail.$error.required) || (FrmRegistro.uemail.$touched && FrmRegistro.uemail.$error.email)" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback">
+            <div class="col-sm-4">
+              <label class="control-label" for="Contrasena">Contraseña:</label>
+            </div>
+            <div class="col-sm-12" ng-class="{'has-error': FrmRegistro.Contrasena.$error.required && FrmRegistro.Contrasena.$touched}">
+              <input type="password" name="Contrasena" class="form-control" id="Contrasena" ng-model="usuario.Contrasena" required>
+              <span ng-show="FrmRegistro.Contrasena.$error.required && FrmRegistro.Contrasena.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback">
+
+            <div class="col-sm-4">
+              <label class="control-label" for="ConfirmarContrasena">Confirmar Contraseña:</label>
+            </div>
+            <div class="col-sm-12" ng-class="{'has-error': FrmRegistro.ConfirmarContrasena.$error.errorCompareTo && FrmRegistro.ConfirmarContrasena.$touched}">
+              <input type="password" name="ConfirmarContrasena" class="form-control" id="ConfirmarContrasena" ng-model="usuario.ConfirmarContrasena" compare-to="usuario.Contrasena">
+               <span ng-show="FrmRegistro.ConfirmarContrasena.$error.errorCompareTo && FrmRegistro.ConfirmarContrasena.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <div class="form-group has-feedback" ng-class="{'has-error': FrmRegistro.telefono.$error.required && FrmRegistro.telefono.$touched}">
+            <div class="col-sm-4">
+              <label class="control-label" for="telefono">Celular:</label>
+            </div>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" name="telefono" id="telefono" ng-model="usuario.Celular" ui-mask="(999) 999-99-99"  ui-mask-placeholder ui-mask-placeholder-char="_" required>
+              <span  ng-show="FrmRegistro.telefono.$error.required && FrmRegistro.telefono.$touched" class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+          </div>
+          <!--
+          <div class="panel panel-info">
+            <div class="panel-heading"><center>Dirección</center></div>
+          </div>
+          <div class="form-group">
+            <label for="calle">Calle:</label>
+            <input type="text" class="form-control" id="calle">
+          </div>
+          <div class="form-group">
+            <label for="interior">No. Interior:</label>
+            <input type="text" class="form-control" id="interior">
+          </div>
+          <div class="form-group">
+            <label for="colonia">Colonia:</label>
+            <input type="text" class="form-control" id="colonia">
+          </div>
+          <div class="form-group">
+            <label for="localidad">Localidad:</label>
+            <select class="form-control" id="localidad">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="municipio">Municipio:</label>
+            <select class="form-control" id="municipio">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <select class="form-control" id="estado">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          -->
+        </form> 
+      </div>
+      <div class="modal-footer">
+        <button ng-click="Registro()" type="button" class="btn btn-success" ng-disabled="FrmRegistro.$invalid || savingfrm == true">
+           <i class="fa fa-spinner fa-spin" ng-show="savingfrm"></i>
+           <span ng-show="savingfrm">Guardando</span>
+           <span ng-hide="savingfrm">Guardar</span>
+        </button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="myModalAlertSuccess" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="alert alert-success" role="alert">
+      <h4 class="alert-heading">Felicidades!</h4>
+      <p>Has sido registrado en el monedero brissa.</p>
+      <p class="mb-0">Estas a un paso de tener acceso a todos los beneficios que monedero brissa te ofrece, dirígete a tu correo y sigue las instrucciones.</p>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
